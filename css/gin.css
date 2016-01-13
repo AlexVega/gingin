@@ -21,6 +21,10 @@
     font-style: normal;
 }
 
+/*TRUNKJS STYLES*/
+
+/*TRUNKJS END STYLES*/
+
 h1, h2{
 	font-family: 'traveling__typewriterregular';
 	color: #4A4A4A;
@@ -43,16 +47,15 @@ h1, h2{
 #logo{
 	height: 50px;
 	margin: 5px 5px 5px 15px;
+	transition:all ease-in 600ms;
+	-webkit-transition:all ease-in 600ms;
+	-moz-transition:all ease-in 600ms;
 }
 
 #navigation{
-	position: absolute;
-	top: 30px;
-	width:90%;
-	height: 60px;
-	background: #EDE8CE;
-	margin:0 auto;
-	left:5%;
+    position: absolute;
+    top: 30px;
+    right: 40px;
 }
 #navigation ul{
 	float: right;
@@ -189,8 +192,8 @@ h1, h2{
 	left:0px !important;
 }
 .hoja2animate{
-	top: 0px !important;
-	right: -30px !important;
+	top: -50px !important;
+    right: -50px !important;
 }
 .hoja3animate{
 	bottom: -80px !important;
@@ -633,7 +636,19 @@ footer .row{
 	.row-eq-height {
 		display:block;
 	}
- 
+	#hoja1, #hoja2, #hoja3, #hoja4{
+		width: 250px;
+	}
+	#drink2 {
+	    margin-left: 0px;
+	}
+	#drink1 {
+	    margin-right: 0px;
+	}
+		#skullgin{
+		margin: -30px auto 0px;
+	}
+	 
 }
 
 @media (max-width: 840px){
@@ -641,6 +656,8 @@ footer .row{
 		width: 120px;
     	margin-top: 25px;
 	}
+
+	
 }
 
 @media (max-width: 767px){
@@ -674,6 +691,36 @@ footer .row{
 	}
 	footer .row{
 		    padding: 0px 0px 30px;
+	}
+	.bebidas{
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 640px){
+	#drink1{
+		display: none;
+	}
+	#drink2{
+		display: none;
+	}
+	.bebidas{
+		float: inherit !important;
+		text-align: center !important;
+		display: block;
+		width: 100% !important;
+	}
+	#skullgin {
+	    margin: 0px auto 0px;
+	}
+	#hoja1, #hoja2, #hoja3, #hoja4 {
+	    width: 180px;
+	}
+}
+
+@media (max-width: 450px){
+	#hoja1, #hoja2, #hoja3, #hoja4{
+		width: 250px;
 	}
 }
 

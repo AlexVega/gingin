@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/gin.css">
+<link rel="stylesheet" href="css/trunk.css">
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -20,49 +21,57 @@
 <script src="js/ScrollMagic.min.js"></script>
 <script src="js/plugins/debug.addIndicators.min.js"></script>
 <script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
+<script src="js/trunk.js"></script>
 
 <script>
   $( function() {
 
-  var $container = $('#masonry');
+    var $container = $('#masonry');
 
-  $container.isotope({
-    masonry: {
-      columnWidth: 70
-    },
-    masonryHorizontal: {
-      rowHeight: 70
-    }
-  });
+    $container.isotope({
+      masonry: {
+        columnWidth: 70
+      },
+      masonryHorizontal: {
+        rowHeight: 70
+      }
+    });
 
-  var isVertical = true;
-  
-  $('#toggle').click( function() {
-    isVertical = !isVertical;
-    // set container size styles
-    var sizeStyle = isVertical ?
-      { width: '100%', height: $container.height() } :
-      { height: '80%', width: $container.width() };
-    // disable transition styles for a second
-    $container.addClass('no-transition').css( sizeStyle );
-    // trigger redraw, see http://blog.alexmaccaw.com/css-transitions
-    var redraw = $container[0].offsetHeight;
-    // re-enable transition and trigger different layoutMode
-    $container.removeClass('no-transition')
-      .isotope({
-        layoutMode: isVertical ? 'masonry' : 'masonryHorizontal'
-      });
+    var isVertical = true;
+    
+    $('#toggle').click( function() {
+      isVertical = !isVertical;
+      // set container size styles
+      var sizeStyle = isVertical ?
+        { width: '100%', height: $container.height() } :
+        { height: '80%', width: $container.width() };
+      // disable transition styles for a second
+      $container.addClass('no-transition').css( sizeStyle );
+      // trigger redraw, see http://blog.alexmaccaw.com/css-transitions
+      var redraw = $container[0].offsetHeight;
+      // re-enable transition and trigger different layoutMode
+      $container.removeClass('no-transition')
+        .isotope({
+          layoutMode: isVertical ? 'masonry' : 'masonryHorizontal'
+        });
+      
+    });
     
   });
-  
-});
-
 </script>
 </head>
 <body>
-<div id="navigation">
-  <nav>
+
+<div class="page-wrapper">
+
+  <header class="slide">    
+    <ul id="navToggle" class="burger slide">    
+      <li></li><li></li><li></li>
+    </ul>
     <img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar">
+  </header>
+
+  <nav class="slide">
     <ul>
       <li><a href="index.html">Nosotros</a></li>
       <li class="separator">|</li>
@@ -73,174 +82,178 @@
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
-</div>
-<section id="intro" class="container-fluid">
-  <h1>#Keppthesecret</h1>
-</section>
-
-<section id="nosotros" class="container-fluid">
-
-  <img id="hoja1" src="img/hoja1.png" alt="">
-  <img id="hoja2" src="img/hoja2.png" alt="">
-  <img id="hoja3" src="img/hoja3.png" alt="">
-  <img id="hoja4" src="img/hoja4.png" alt="">
-
-    <div class="row">
-    <div id="triggerhoja"></div>
-      <div id="nosotros-texto" class="col-xs-4 col-xs-offset-4">
-        <p>La mejor mixiología <br> de ginebras de México   </p>
-      </div>
-    </div>
-    <script>
-      var controller = new ScrollMagic.Controller();
-    </script>
-    <div id="bebidas" class="row">
-      <div class="col-md-6">
-        <p id="bebida1" class="bebidas">#StickyGin <img id="drink1" src="img/drink.png" alt=""></p>
-
-        
-      </div>
-      <div class="col-md-6">
-       
-        <p id="bebida2" class="bebidas"> <img id="drink2" src="img/drink2.png" alt="">#VellocinoDeOro </p>
-        
-      </div>
-     
-    </div>
-    <div class="row">
-       <div class="col-md-6">
-        <p id="bebida3" class="bebidas">#Salmoncito</p>
-      </div>
-      <div class="col-md-6">
-         <p id="bebida4" class="bebidas">#GinGin</p>
-      </div>
-    </div>
-    <div class="clearfix"></div>
-    <img id="skullgin" src="img/skull.png" alt="GINGIN SKULL">
-    
-    
-    <script>
-      var hoja1 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
-
-              .setClassToggle("#hoja1", "hoja1animate")
-              .addIndicators({name: "hoja1"})
-              .addTo(controller);
-      var hoja2 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
-
-              .setClassToggle("#hoja2", "hoja2animate")
-              .addIndicators({name: "hoja2"})
-              .addTo(controller);
-      var hoja3 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
-
-              .setClassToggle("#hoja3", "hoja3animate")
-              .addIndicators({name: "hoja3"})
-              .addTo(controller);
-      var hoja4 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
-
-              .setClassToggle("#hoja4", "hoja4animate")
-              .addIndicators({name: "hoja4"})
-              .addTo(controller);
-       var skull = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
-
-              .setClassToggle("#skullgin", "scaleup")
-              .addIndicators({name: "skull"})
-              .addTo(controller);
-    </script>
-</section>
-<section id="video" class="container-fluid">
-  <script>
- 
-    var videoplay = new ScrollMagic.Scene({ triggerElement: "#video"})
-              .on('start', function () {
-                  $('#vid')[0].play(); 
-              })
-              .on('leave', function () {
-                  $('#vid')[0].pause(); 
-              })
-              .addIndicators({name: "videoplay"})
-              .addTo(controller);   
-  </script>
-  <div class="row">
-    
-      <video id="vid" controls preload="none" poster="video/secret.jpg"> 
-        <source src="video/secret.mp4" type='video/mp4' />
-        <source src="video/secret.webm" type='video/webm' />
-      </video> 
-    
-  </div>
-  <div id="pausavideo"></div>
-  <script>
-    var videopausa = new ScrollMagic.Scene({ triggerElement: "#pausavideo"})
-              .on('start', function () {
-                  $('#vid')[0].pause(); 
-              })
-              .on('leave', function () {
-                  $('#vid')[0].play(); 
-              })
-              .addIndicators({name: "videopausa"})
-              .addTo(controller);
-    </script>
-</section>
-<section id="instagramfeed" class="container-fluid">
   
-  <img id="iguana" src="img/iguana.png" alt="">
-  <img id="leafs" src="img/leafs.png" alt="">
-  <div id="instafeed"></div>
-  <div id="triggeriguana" class="row">
-    <div class="col-md-6 col-md-offset-3">
-    
-      <h2>Share with us #GinNights</h2>
+  <div class="content slide">     
+
+  <section id="intro" class="container-fluid">
+    <h1>#Keppthesecret</h1>
+  </section>
+
+  <section id="nosotros" class="container-fluid">
+
+    <img id="hoja1" src="img/hoja1.png" alt="">
+    <img id="hoja2" src="img/hoja2.png" alt="">
+    <img id="hoja3" src="img/hoja3.png" alt="">
+    <img id="hoja4" src="img/hoja4.png" alt="">
+
+      <div class="row">
+      <div id="triggerhoja"></div>
+        <div id="nosotros-texto" class="col-xs-4 col-xs-offset-4">
+          <p>La mejor mixiología <br> de ginebras de México   </p>
+        </div>
+      </div>
+      <script>
+        var controller = new ScrollMagic.Controller();
+      </script>
+      <div id="bebidas" class="row">
+        <div class="col-sm-6">
+          <p id="bebida1" class="bebidas">#StickyGin <img id="drink1" src="img/drink.png" alt=""></p>
+
+          
+        </div>
+        <div class="col-sm-6">
+         
+          <p id="bebida2" class="bebidas"> <img id="drink2" src="img/drink2.png" alt="">#VellocinoDeOro </p>
+          
+        </div>
+       
+      </div>
+      <div class="row">
+         <div class="col-sm-6">
+          <p id="bebida3" class="bebidas">#Salmoncito</p>
+        </div>
+        <div class="col-sm-6">
+           <p id="bebida4" class="bebidas">#GinGin</p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <img id="skullgin" src="img/skull.png" alt="GINGIN SKULL">
+      
+      
+      <script>
+        var hoja1 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
+
+                .setClassToggle("#hoja1", "hoja1animate")
+                //.addIndicators({name: "hoja1"})
+                .addTo(controller);
+        var hoja2 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
+
+                .setClassToggle("#hoja2", "hoja2animate")
+                //.addIndicators({name: "hoja2"})
+                .addTo(controller);
+        var hoja3 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
+
+                .setClassToggle("#hoja3", "hoja3animate")
+                //.addIndicators({name: "hoja3"})
+                .addTo(controller);
+        var hoja4 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
+
+                .setClassToggle("#hoja4", "hoja4animate")
+                //.addIndicators({name: "hoja4"})
+                .addTo(controller);
+         var skull = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
+
+                .setClassToggle("#skullgin", "scaleup")
+                //.addIndicators({name: "skull"})
+                .addTo(controller);
+      </script>
+  </section>
+  <section id="video" class="container-fluid">
+    <script>
+   
+      var videoplay = new ScrollMagic.Scene({ triggerElement: "#video"})
+                .on('start', function () {
+                    $('#vid')[0].play(); 
+                })
+                .on('leave', function () {
+                    $('#vid')[0].pause(); 
+                })
+                //.addIndicators({name: "videoplay"})
+                .addTo(controller);   
+    </script>
+    <div class="row">
+      
+        <video id="vid" controls preload="none" poster="video/secret.jpg"> 
+          <source src="video/secret.mp4" type='video/mp4' />
+          <source src="video/secret.webm" type='video/webm' />
+        </video> 
       
     </div>
-    <div id="instacrap">
-      <iframe src="http://widget.websta.me/in/gingin_mx/?r=1&w=3&h=3&b=0&p=5&sb=off" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:765px; height: 765px" ></iframe> 
+    <div id="pausavideo"></div>
+    <script>
+      var videopausa = new ScrollMagic.Scene({ triggerElement: "#pausavideo"})
+                .on('start', function () {
+                    $('#vid')[0].pause(); 
+                })
+                .on('leave', function () {
+                    $('#vid')[0].play(); 
+                })
+                //.addIndicators({name: "videopausa"})
+                .addTo(controller);
+      </script>
+  </section>
+  <section id="instagramfeed" class="container-fluid">
+    
+    <img id="iguana" src="img/iguana.png" alt="">
+    <img id="leafs" src="img/leafs.png" alt="">
+    <div id="instafeed"></div>
+    <div id="triggeriguana" class="row">
+      <div class="col-md-6 col-md-offset-3">
+      
+        <h2>Share with us #GinNights</h2>
+        
+      </div>
+      <div id="instacrap">
+        <iframe src="http://widget.websta.me/in/gingin_mx/?r=1&w=3&h=3&b=0&p=5&sb=off" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:765px; height: 765px" ></iframe> 
+      </div>
+      
+    </div>
+    <!-- <div class="row">
+      <img id="camera" src="img/camera.png" alt="">
+    </div> -->
+   <script>
+      var iguana = new ScrollMagic.Scene({triggerElement: "#triggeriguana"})
+
+                .setClassToggle("#iguana", "iguanaanimate")
+                //.addIndicators({name: "iguana"})
+                .addTo(controller);
+        var leafs = new ScrollMagic.Scene({triggerElement: "#triggeriguana"})
+
+                .setClassToggle("#leafs", "leafsanimate")
+                //.addIndicators({name: "leafy"})
+                .addTo(controller);
+      </script>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+      <div id="social" class="col-sm-2">
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter-square"></i></a>
+      </div>
+      <div id="address-polanco" class="col-sm-4">
+        <h3>POLANCO</h3>
+        <p>Pedro Calderon de la Barca 72, Polanco <br>
+              Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
+
+      </div>
+      <div id="address-roma" class="col-sm-4">
+        <h3>ROMA</h3>
+        <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
+              Horario: Martes a Sábado 6pm - 2am</p>
+
+      </div>
+      <div id="indiana-group" class="col-sm-2">
+        <img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group">
+      </div>
+    </div>
+      
     </div>
     
-  </div>
-  <!-- <div class="row">
-    <img id="camera" src="img/camera.png" alt="">
-  </div> -->
- <script>
-    var iguana = new ScrollMagic.Scene({triggerElement: "#triggeriguana"})
-
-              .setClassToggle("#iguana", "iguanaanimate")
-              .addIndicators({name: "iguana"})
-              .addTo(controller);
-      var leafs = new ScrollMagic.Scene({triggerElement: "#triggeriguana"})
-
-              .setClassToggle("#leafs", "leafsanimate")
-              .addIndicators({name: "leafy"})
-              .addTo(controller);
-    </script>
-</section>
-<footer>
-  <div class="container">
-    <div class="row">
-    <div id="social" class="col-sm-2">
-      <a href="#"><i class="fa fa-facebook-official"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
-      <a href="#"><i class="fa fa-twitter-square"></i></a>
-    </div>
-    <div id="address-polanco" class="col-sm-4">
-      <h3>POLANCO</h3>
-      <p>Pedro Calderon de la Barca 72, Polanco <br>
-            Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
-
-    </div>
-    <div id="address-roma" class="col-sm-4">
-      <h3>ROMA</h3>
-      <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
-            Horario: Martes a Sábado 6pm - 2am</p>
-
-    </div>
-    <div id="indiana-group" class="col-sm-2">
-      <img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group">
-    </div>
-  </div>
-    
+  </footer>
   </div>
   
-</footer>
-
+</div>
 </body>
 </html>

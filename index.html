@@ -16,12 +16,15 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/ScrollMagic.min.js"></script>
 <script src="js/plugins/debug.addIndicators.min.js"></script>
 <script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
 <script src="js/trunk.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
 
 <script>
   $( function() {
@@ -203,8 +206,18 @@
         <h2>Share with us #GinNights</h2>
         
       </div>
-      <div id="instacrap">
-        <iframe src="http://widget.websta.me/in/gingin_mx/?r=1&w=3&h=3&b=0&p=5&sb=off" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:765px; height: 765px" ></iframe> 
+      <div ng-app="ginstagram" ng-controller="InstaCtrl" id="instacrap">
+         <div ng-repeat="p in pics" class="col-md-3 col-xs-6 col-xs-12 pm-insta-box">
+            <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.standard_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}" alt="{{p.caption.text}}"></a>
+            <!-- <span class="glyphicon glyphicon-heart icon-color"> {{p.likes.count}}</span> <span class="glyphicon glyphicon-comment"> {{p.comments.count}}</span>  -->
+            <a class="hovertags" href="{{p.link}}" target="_blank">
+              <div class="hashtags hovertext">
+              <span class="icon-color"><i class="glyphicon glyphicon-heart"></i>{{p.likes.count}}</span>
+              <strong>@{{p.caption.from.username}}</strong>
+                {{p.caption.text}}
+              </div>
+            </a>
+          </div>
       </div>
       
     </div>

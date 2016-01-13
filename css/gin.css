@@ -695,6 +695,9 @@ footer .row{
 	.bebidas{
 		font-size: 18px;
 	}
+	#isotopo{
+		width: 620px;
+	}
 }
 
 @media (max-width: 640px){
@@ -715,6 +718,12 @@ footer .row{
 	}
 	#hoja1, #hoja2, #hoja3, #hoja4 {
 	    width: 180px;
+	}
+	#isotopo{
+		width: 350px;
+	}
+	.item{
+		width: 100%;
 	}
 }
 

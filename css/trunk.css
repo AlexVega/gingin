@@ -61,6 +61,9 @@ nav li a {
 	color: #4A4A4A;
 	letter-spacing: 2px;
 	text-transform: uppercase;
+	-webkit-transition:all ease-in-out 500ms;
+	-moz-transition:all ease-in-out 500ms;
+	transition:all ease-in-out 500ms;
 }
 nav li a:hover {background:#E0DCC9;text-decoration: none;color: #4A4A4A;}
 

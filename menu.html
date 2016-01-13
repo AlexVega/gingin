@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GINGIN {Kitchenbar}</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/gin.css">
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ScrollMagic.min.js"></script>
+<script src="js/plugins/debug.addIndicators.min.js"></script>
+<script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
+
+<script>
+$( document ).ready(function() {
+  /* activate jquery isotope */
+  var $container = $('#galeria').isotope({
+    itemSelector : '.item',
+    isFitWidth: true
+  });
+
+  $(window).smartresize(function(){
+    $container.isotope({
+      columnWidth: '.col-sm-3'
+    });
+  });
+  
+  $container.isotope({ filter: '*' });
+
+    // filter items on button click
+  $('#filters').on( 'click', 'button', function() {
+    var filterValue = $(this).attr('data-filter');
+    $container.isotope({ filter: filterValue });
+  });
+});
+
+
+
+
+</script>
+</head>
+<body>
+<div id="navigation">
+  <nav>
+    <img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar">
+    <ul>
+      <li><a href="index.html">Nosotros</a></li>
+      <li class="separator">|</li>
+      <li><a href="galeria.html">Galeria</a></li>
+      <li class="separator">|</li>
+      <li><a href="menu.html">Menu</a></li>
+      <li class="separator">|</li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div id="image-bg">
+  
+
+</div>
+<div id="menuwrapper">
+  
+
+<section id="menu" class="container">
+  <img id="flowers" src="img/flowers.png" alt="">
+  <img id="flowers2" src="img/flowers2.png" alt="">
+  <div class="row">
+    <h2 class="left"> MONTADITOS </h2> <h3 class="left marleft20">"Selección de tres piesas"</h3>
+    <div class="clearfix"></div>
+    <div class="col-md-4">
+      <h3>Jamón serrano con esparragos</h3>
+      <p>Crocante de jamón serrano y espárragos marinados con aceite de olivo extra virgen y mousse de cardamomo.</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Berenjena</h3>
+      <p>Láminas de berenjena, portobello y pimiento rojo sobre pan de arándano y romero.</p>
+    </div>
+    <div class="col-md-4">
+      <h3> Higos</h3>
+      <p>Higos caramelizados, queso cabra ceniza, miel trufada sobre pan cristal</p>
+    </div>
+  </div>
+  <div id="clasicos" class="row">
+    <img id="skullbull" src="img/skullbull.png" alt="">
+    <div class="col-md-12">
+      <h2>LOS CLÁSICOS  DEL GIN GIN</h2>
+    </div>
+    
+    <div class="col-md-6">
+      <h3>Alcachofa al azafrán </h3>
+      <p>Alcachofa, pimiento rojo y portobello con aceite de olivo acompañado de aderezo de azafrán.</p>  
+      <h3>Caprese Mare  </h3>
+      <p>Ensalada de jitomate organico con queso mozarella de bufala, aceite de albahaca con gin Mare, glace balsamico y baya de enebro. </p>
+      <h3>Aguachile Bombay  </h3>
+      <p>Filete de res sellado con pimienta, marinado con aguachile Bombay y chilpetín montado con pepino persa, germinado de alfalfa y jengibre.  </p>
+      <h3>Pulpo a la Hendricks </h3>
+      <p>Pulpo marinado con vinagreta de gin Hendricks y paprika, acompañado con ensalada y verduras baby.  </p>
+      <h3>Atún sellado </h3>
+      <p>Atún fresco en costra de semilla de cilantro, salsa teriyaki, mayonesa de wasabi y brotes de cilantro. </p>
+      <h3>Carpaccio de salmón </h3>
+      <p>Salmón marinado con vinagreta de la casa, queso parmesano, alcaparra, germinado de cebolla, ensaladita de arúgula con hinojo y un toque de gin.   </p>
+
+    </div>
+    <div class="col-md-6">
+      <h3>Tacos de ribeye cointreau </h3>
+      <p>Cubos de ribeye flameado con cointreau, brotes de cilantro, germinados de cebolla y costra de parmesano acompañado con salsa negra de habanero y limón amarillo.</p>  
+      <h3>Ciabatta de rib eye   </h3>
+      <p>Rib eye, costra de queso parmesano y provolone, portobello, cebolla morada, mezcla de lechugas y aderezo de chiles toreados.</p>  
+      <h3>Mini hamburguesas </h3>
+      <p>Carne molida de res, compota de higo, queso americano y papas caseras.</p> 
+      <h3>Papas fritas caseras  </h3>
+      <p>Papas y camote fritos al estilo frances con queso de cabra y parmesano, acompañados de mayonesa de alcaparras.</p> 
+      <h3>Camarones roca  </h3>
+      <p>Camarones marinados con salsa siracha y cajún, rebosado de katacuriko, aderezo de habanero, aderezo eureka-jengibre. </p>
+
+    </div>
+  </div>
+  <div id="especiales" class="row row-eq-height">
+    <img src="img/crow.png" id="crow" alt="">
+    <div class="col-md-6 marco marcofirst">
+      <h2 class="twoline">LOS ESPECIALES <br> DE POLANCO</h2>
+      <h3>Short rib glase  </h3>
+      <p>Short rib con costilla braseado por 12 horas en demi glace de cerveza obscura, ajo y canela, papas cambray, zanahorias e hinojo rostizados con chimichurri de albahaca thai. </p>
+      <p class="note">(Recomendado para 2 personas.)</p>
+      <h3>Baby back ribs al pastor  </h3>
+      <p>Baby back ribs horneadas lentamente, selladas con salsa pastor, brochetas de piña caramelizada, cebollitas cambray.</p>
+      <h3>Baby beets salad</h3>
+      <p>Arugula, espinaca baby, higo rostizado, betabeles baby rostizados, mousse de queso de cabra, vinagreta de jitomate, aderezo de fresa.</p>
+      <h3>Ceviche de huachinango  </h3>
+      <p>Huachinango fresco, limón eureka, pimientos, cebolla morada, jitomate, pasta de aji amarillo, aceite de oliva, brotes de cilantro, salmas para acompañar. </p>
+      <h3>Salpicón de pato</h3>
+      <p>Pato rostizado, jitomate, cebolla morada, jugo de cítricos, aguacate tatemado, chiles güeros en vinagre. </p>
+
+
+
+    </div>
+    
+    <div class="col-md-6 marco">
+      <h2 class="twoline">LOS ESPECIALES <br> DE LA ROMA</h2>
+      <h3>Ensalada de pera</h3>
+      <p>Mezcla de lechugas con vinagreta Hendrick’s, pera, nuez caramelizada, queso de cabra y glacé balsámico. </p>
+      <h3>Mejillones mascavidas </h3>
+      <p>Mejillones al vapor con un twist de limón eureka, perejil y un toque de mezcal.</p>  
+      <h3> Camarones 7 misterios </h3>
+      <p>3 camarones jumbo con cabeza flameados con mezcal 7 misterios y terminados en horno de piedra con salsa de mango, salsa mexicana, galleta de ajo y brote de cilantro. </p>
+      <h3>Pulpo onilikan </h3>
+      <p>Pulpo a la parrilla marinado con adobo de chile ancho y ginebra mexicana onilikan, coliflores de colores en escabeche.  </p>
+      <h3>Black NY  </h3>
+      <p>New York de 220g al estilo Pittsburgh con aderezo de horse radish y piña, verduras a la parrilla.</p>
+
+
+    </div>
+  </div>
+  <div id="pizzas" class="row">
+    <img src="img/onion.png" id="onion" alt="">
+    <div class="col-md-12">
+      <h2> LAS PIZZAS</h2>
+    </div>
+    
+    <div class="col-md-6">
+      <h3>GinGin</h3>
+      <p>Bechamel, queso, tocino en miel de maple, cebolla morada, alcaparras fritas y oregano fresco.</p> 
+      <h3>Margarita</h3>
+      <p>Pomodoro, mozarella fresco, aceite de albahaca, jitomate deshidratado, albahaca fresca.</p> 
+      <h3>Canibal</h3>
+      <p>Pomodoro, queso, salami, chistorra y tocino.  </p>
+
+    </div>
+    <div class="col-md-6">
+      <h3>Arugula </h3>
+      <p>Pomodoro, arugula, queso de cabra, tomate cherry. </p>
+      <h3>Jeréz </h3>
+      <p>Pomodoro, gorgonzola, jamón serrano, cocida pochada al jerez, glacede jeréz. </p>
+      <h3>Mariscos </h3>
+      <p>Pomodoro, cebolla, camarón y pulpo salteado con Vermout.  </p>
+
+    </div>
+  </div>
+</section>
+</div>
+<div id="gin0clock">
+  <h1>It's always gin o'clock</h1>
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div id="social" class="col-sm-2">
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter-square"></i></a>
+      </div>
+      <div id="address-polanco" class="col-sm-4">
+        <h3>POLANCO</h3>
+        <p>Pedro Calderon de la Barca 72, Polanco <br>
+              Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
+
+      </div>
+      <div id="address-roma" class="col-sm-4">
+        <h3>ROMA</h3>
+        <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
+              Horario: Martes a Sábado 6pm - 2am</p>
+
+      </div>
+      <div id="indiana-group" class="col-sm-2">
+        <img src="img/indiana-logo.png" alt="">
+      </div>
+  </div>
+    
+  </div>
+  
+</footer>
+
+</body>
+</html>

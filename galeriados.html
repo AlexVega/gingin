@@ -3,25 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GINGIN {Kitchenbar}</title>
-<link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-<link rel="manifest" href="favicon.ico/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,51 +22,36 @@
 <script src="http://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
 <script src="js/trunk.js"></script>
 <script src="js/infinite.js"></script>
-<script src="js/queryloader2.min.js"></script>
 <script>
-  $(document).ready(function () {
-    $("body").queryLoader2({
-      barColor: "#fff",
-      backgroundColor: "#000",
-      percentage: true,
-    });
-});
-</script>
-<script>
-$(window).load(function(){
-
-  $( document ).ready(function() {
-    var $container = $('#galeria').isotope({
-      itemSelector : '.item',
-      isFitWidth: true
-    });
-
-    $container.infinitescroll({
-      navSelector  : '#page_nav',   
-      nextSelector : '#page_nav a', 
-      itemSelector : '.item',    
-      loading: {
-          finishedMsg: 'NO HAY MÁS IMAGENES',
-          img: 'http://i.imgur.com/qkKy8.gif'
-        }
-      },
-      // isotope callback
-      function(newElements) {
-        var $newElems = $(newElements);
-        $newElems.imagesLoaded(function(){
-          $container.isotope('appended', $newElems );
-        });
-      }
-    );
-
-    $(window).smartresize(function(){
-      $container.isotope({
-        columnWidth: '.col-sm-3'
-      });
-    });
+$( document ).ready(function() {
+  var $container = $('#galeria').isotope({
+    itemSelector : '.item',
+    isFitWidth: true
   });
 
+  $container.infinitescroll({
+    navSelector  : '#page_nav',    // selector for the paged navigation 
+    nextSelector : '#page_nav a',  // selector for the NEXT link (to page 2)
+    itemSelector : '.item',     // selector for all items you'll retrieve
+    loading: {
+        finishedMsg: 'NO HAY MÁS IMAGENES',
+        img: 'http://i.imgur.com/qkKy8.gif'
+      }
+    },
+    // call Isotope as a callback
+    function( newElements ) {
+      $container.isotope( 'appended', $( newElements ) ); 
+    }
+  );
+
+  $(window).smartresize(function(){
+    $container.isotope({
+      columnWidth: '.col-sm-3'
+    });
+  });
 });
+
+
 
 
 </script>
@@ -101,7 +69,7 @@ $(window).load(function(){
     <ul>
       <li><a href="index.html">Nosotros</a></li>
       <li class="separator">|</li>
-      <li><a class="current" href="galeria.html">Galería</a></li>
+      <li><a href="galeria.html">Galería</a></li>
       <li class="separator">|</li>
       <li><a href="menu.html">Menú</a></li>
       <li class="separator">|</li>
@@ -167,12 +135,12 @@ $(window).load(function(){
     
   </section>
   <div id="page_nav">
-    <a href="2.html"></a>
+    <a href="wts.html"></a>
   </div>
 
 
   <footer>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
       <div id="social" class="col-sm-2">
         <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
@@ -192,7 +160,7 @@ $(window).load(function(){
 
       </div>
       <div id="indiana-group" class="col-sm-2">
-        <a href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
+        <img src="img/indiana-logo.png" alt="">
       </div>
     </div>
       

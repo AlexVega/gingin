@@ -8,7 +8,7 @@ app.controller('InstaCtrl', function ($scope, $interval, instagram) {
 	$scope.have = [];
 	$scope.orderBy = '-likes.count';
 	$scope.getMore = function() {
-        instagram.fetchPetmail(function(data) {
+        instagram.fetchGin(function(data) {
             for(var i=0; i<data.length; i++) {
               if (typeof $scope.have[data[i].id]==="undefined") {
                 $scope.pics.push(data[i]) ;

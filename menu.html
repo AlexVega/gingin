@@ -3,8 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <title>GINGIN {Kitchenbar}</title>
+<link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +38,16 @@
 <script src="js/plugins/debug.addIndicators.min.js"></script>
 <script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
 <script src="js/trunk.js"></script>
+<script src="js/queryloader2.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("body").queryLoader2({
+      barColor: "#fff",
+      backgroundColor: "#000",
+      percentage: true,
+    });
+});
+</script>
 <script>
 $( document ).ready(function() {
   /* activate jquery isotope */
@@ -56,16 +83,16 @@ $( document ).ready(function() {
     <ul id="navToggle" class="burger slide">    
       <li></li><li></li><li></li>
     </ul>
-    <img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar">
+    <a href="index.html"><img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar"></a>
   </header>
 
   <nav class="slide">
     <ul>
       <li><a href="index.html">Nosotros</a></li>
       <li class="separator">|</li>
-      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="galeria.html">Galería</a></li>
       <li class="separator">|</li>
-      <li><a href="menu.html">Menu</a></li>
+      <li><a class="current" href="menu.html">Menú</a></li>
       <li class="separator">|</li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
@@ -84,10 +111,10 @@ $( document ).ready(function() {
     <img id="flowers" src="img/flowers.png" alt="">
     <img id="flowers2" src="img/flowers2.png" alt="">
     <div class="row">
-      <h2 class="left"> MONTADITOS </h2> <h3 class="left marleft20">"Selección de tres piesas"</h3>
+      <h2 class="left"> MONTADITOS </h2> <h3 class="left marleft20">"Selección de tres piezas"</h3>
       <div class="clearfix"></div>
       <div class="col-md-4">
-        <h3>Jamón serrano con esparragos</h3>
+        <h3>Jamón serrano con espárragos</h3>
         <p>Crocante de jamón serrano y espárragos marinados con aceite de olivo extra virgen y mousse de cardamomo.</p>
       </div>
       <div class="col-md-4">
@@ -109,7 +136,7 @@ $( document ).ready(function() {
         <h3>Alcachofa al azafrán </h3>
         <p>Alcachofa, pimiento rojo y portobello con aceite de olivo acompañado de aderezo de azafrán.</p>  
         <h3>Caprese Mare  </h3>
-        <p>Ensalada de jitomate organico con queso mozarella de bufala, aceite de albahaca con gin Mare, glace balsamico y baya de enebro. </p>
+        <p>Ensalada de jitomate orgánico con queso mozarella de bufala, aceite de albahaca con gin Mare, glace balsámico y baya de enebro. </p>
         <h3>Aguachile Bombay  </h3>
         <p>Filete de res sellado con pimienta, marinado con aguachile Bombay y chilpetín montado con pepino persa, germinado de alfalfa y jengibre.  </p>
         <h3>Pulpo a la Hendricks </h3>
@@ -128,7 +155,7 @@ $( document ).ready(function() {
         <h3>Mini hamburguesas </h3>
         <p>Carne molida de res, compota de higo, queso americano y papas caseras.</p> 
         <h3>Papas fritas caseras  </h3>
-        <p>Papas y camote fritos al estilo frances con queso de cabra y parmesano, acompañados de mayonesa de alcaparras.</p> 
+        <p>Papas y camote fritos al estilo francés con queso de cabra y parmesano, acompañados de mayonesa de alcaparras.</p> 
         <h3>Camarones roca  </h3>
         <p>Camarones marinados con salsa siracha y cajún, rebosado de katacuriko, aderezo de habanero, aderezo eureka-jengibre. </p>
 
@@ -144,7 +171,7 @@ $( document ).ready(function() {
         <h3>Baby back ribs al pastor  </h3>
         <p>Baby back ribs horneadas lentamente, selladas con salsa pastor, brochetas de piña caramelizada, cebollitas cambray.</p>
         <h3>Baby beets salad</h3>
-        <p>Arugula, espinaca baby, higo rostizado, betabeles baby rostizados, mousse de queso de cabra, vinagreta de jitomate, aderezo de fresa.</p>
+        <p>Arúgula, espinaca baby, higo rostizado, betabeles baby rostizados, mousse de queso de cabra, vinagreta de jitomate, aderezo de fresa.</p>
         <h3>Ceviche de huachinango  </h3>
         <p>Huachinango fresco, limón eureka, pimientos, cebolla morada, jitomate, pasta de aji amarillo, aceite de oliva, brotes de cilantro, salmas para acompañar. </p>
         <h3>Salpicón de pato</h3>
@@ -178,7 +205,7 @@ $( document ).ready(function() {
       
       <div class="col-md-6">
         <h3>GinGin</h3>
-        <p>Bechamel, queso, tocino en miel de maple, cebolla morada, alcaparras fritas y oregano fresco.</p> 
+        <p>Bechamel, queso, tocino en miel de maple, cebolla morada, alcaparras fritas y orégano fresco.</p> 
         <h3>Margarita</h3>
         <p>Pomodoro, mozarella fresco, aceite de albahaca, jitomate deshidratado, albahaca fresca.</p> 
         <h3>Canibal</h3>
@@ -205,26 +232,26 @@ $( document ).ready(function() {
   <footer>
     <div class="container">
       <div class="row">
-        <div id="social" class="col-sm-2">
-          <a href="#"><i class="fa fa-facebook-official"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-twitter-square"></i></a>
-        </div>
-        <div id="address-polanco" class="col-sm-4">
-          <h3>POLANCO</h3>
-          <p>Pedro Calderon de la Barca 72, Polanco <br>
-                Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
+      <div id="social" class="col-sm-2">
+        <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
+        <a href="https://www.instagram.com/gingin_mx/"><i class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/gingin_mx"><i class="fa fa-twitter-square"></i></a>
+      </div>
+      <div id="address-polanco" class="col-sm-4">
+        <h3>POLANCO</h3>
+        <p>Pedro Calderón de la Barca 72, Polanco <br>
+              Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
 
-        </div>
-        <div id="address-roma" class="col-sm-4">
-          <h3>ROMA</h3>
-          <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
-                Horario: Martes a Sábado 6pm - 2am</p>
+      </div>
+      <div id="address-roma" class="col-sm-4">
+        <h3>ROMA</h3>
+        <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
+              Horario:  Martes a Sábado 6pm - 2am</p>
 
-        </div>
-        <div id="indiana-group" class="col-sm-2">
-          <img src="img/indiana-logo.png" alt="">
-        </div>
+      </div>
+      <div id="indiana-group" class="col-sm-2">
+        <a href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
+      </div>
     </div>
       
     </div>

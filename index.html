@@ -3,8 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <title>GINGIN {Kitchenbar}</title>
+<link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,71 +42,46 @@
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>
 <script src="js/controllers.js"></script>
-
+<!-- *******PRELOADER *******-->
+<script src="js/queryloader2.min.js"></script>
 <script>
-  $( function() {
-
-    var $container = $('#masonry');
-
-    $container.isotope({
-      masonry: {
-        columnWidth: 70
-      },
-      masonryHorizontal: {
-        rowHeight: 70
-      }
+  $(document).ready(function () {
+    $("body").queryLoader2({
+      barColor: "#fff",
+      backgroundColor: "#000",
+      percentage: true,
     });
-
-    var isVertical = true;
-    
-    $('#toggle').click( function() {
-      isVertical = !isVertical;
-      // set container size styles
-      var sizeStyle = isVertical ?
-        { width: '100%', height: $container.height() } :
-        { height: '80%', width: $container.width() };
-      // disable transition styles for a second
-      $container.addClass('no-transition').css( sizeStyle );
-      // trigger redraw, see http://blog.alexmaccaw.com/css-transitions
-      var redraw = $container[0].offsetHeight;
-      // re-enable transition and trigger different layoutMode
-      $container.removeClass('no-transition')
-        .isotope({
-          layoutMode: isVertical ? 'masonry' : 'masonryHorizontal'
-        });
-      
-    });
-    
-  });
+});
 </script>
-</head>
-<body>
 
+</head>
+<body id="textura">
+<!-- ****MAIN WRAPPER***** -->
 <div class="page-wrapper">
 
   <header class="slide">    
     <ul id="navToggle" class="burger slide">    
       <li></li><li></li><li></li>
     </ul>
-    <img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar">
+    <a href="index.html"><img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar"></a>
   </header>
 
   <nav class="slide">
     <ul>
-      <li><a href="index.html">Nosotros</a></li>
+      <li><a class="current" href="index.html">Nosotros</a></li>
       <li class="separator">|</li>
-      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="galeria.html">Galería</a></li>
       <li class="separator">|</li>
-      <li><a href="menu.html">Menu</a></li>
+      <li><a href="menu.html">Menú</a></li>
       <li class="separator">|</li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
-  
-  <div class="content slide">     
+<!-- ****MAIN CONTENT***** -->
+<div  class="content slide">     
 
   <section id="intro" class="container-fluid">
-    <h1>#Keppthesecret</h1>
+    <h1>#Keepthesecret</h1>
   </section>
 
   <section id="nosotros" class="container-fluid">
@@ -101,8 +93,8 @@
 
       <div class="row">
       <div id="triggerhoja"></div>
-        <div id="nosotros-texto" class="col-xs-4 col-xs-offset-4">
-          <p>La mejor mixiología <br> de ginebras de México   </p>
+        <div id="nosotros-texto" class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+          <p>La mejor mixología de ginebras de México   </p>
         </div>
       </div>
       <script>
@@ -178,7 +170,7 @@
       
         <video id="vid" controls preload="none" poster="video/secret.jpg"> 
           <source src="video/secret.mp4" type='video/mp4' />
-          <source src="video/secret.webm" type='video/webm' />
+          <!-- <source src="video/secret.webm" type='video/webm' /> -->
         </video> 
       
     </div>
@@ -207,7 +199,7 @@
         
       </div>
       <div ng-app="ginstagram" ng-controller="InstaCtrl" id="instacrap">
-         <div ng-repeat="p in pics" class="col-md-3 col-xs-6 col-xs-12 pm-insta-box">
+         <div ng-repeat="p in pics | limitTo:9"  class="col-md-4 col-sm-6 col-xs-6 pm-insta-box">
             <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.standard_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}" alt="{{p.caption.text}}"></a>
             <!-- <span class="glyphicon glyphicon-heart icon-color"> {{p.likes.count}}</span> <span class="glyphicon glyphicon-comment"> {{p.comments.count}}</span>  -->
             <a class="hovertags" href="{{p.link}}" target="_blank">
@@ -241,24 +233,24 @@
     <div class="container">
       <div class="row">
       <div id="social" class="col-sm-2">
-        <a href="#"><i class="fa fa-facebook-official"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-twitter-square"></i></a>
+        <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
+        <a href="https://www.instagram.com/gingin_mx/"><i class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/gingin_mx"><i class="fa fa-twitter-square"></i></a>
       </div>
       <div id="address-polanco" class="col-sm-4">
         <h3>POLANCO</h3>
-        <p>Pedro Calderon de la Barca 72, Polanco <br>
+        <p>Pedro Calderón de la Barca 72, Polanco <br>
               Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
 
       </div>
       <div id="address-roma" class="col-sm-4">
         <h3>ROMA</h3>
         <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
-              Horario: Martes a Sábado 6pm - 2am</p>
+              Horario:  Martes a Sábado 6pm - 2am</p>
 
       </div>
       <div id="indiana-group" class="col-sm-2">
-        <img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group">
+        <a href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
       </div>
     </div>
       
@@ -266,7 +258,6 @@
     
   </footer>
   </div>
-  
 </div>
 </body>
 </html>

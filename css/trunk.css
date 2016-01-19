@@ -1,6 +1,6 @@
 
 .page-wrapper {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
@@ -8,6 +8,7 @@
 
 
 a{text-decoration: none;}
+a:hover{text-decoration: none;}
 
 header {
 	position: absolute;
@@ -158,7 +159,7 @@ nav {
 	background-color: #EDE8CE;
 	
 	/* starting point */
-	opacity: .3;
+	opacity: 0.0;
 	-webkit-transform: translate3d(5%,0,0)scale(.97);
 	-moz-transform: translate3d(5%,0,0)scale(.97);
 	transform: translate3d(5%,0,0)scale(.97);
@@ -167,6 +168,7 @@ nav {
 /*Nav Expanding Open Effect*/
 nav.abierto {
 	opacity: 1;
+	z-index: 10;
 
 	-webkit-transform: translate3d(0,0,0)scale(1);
 	-webkit-animation: slideIn .35s ease-in-out;
@@ -178,19 +180,19 @@ nav.abierto {
 	animation: slideIn .35s ease-in-out;
 }
 @-webkit-keyframes slideIn {
-	0%       {opacity: .3;
+	0%       {opacity: 0.0;
 				-webkit-transform: translate3d(5%,0,0)scale(.97);}
 	100%  {opacity: 1;
 				-webkit-transform: translate3d(0,0,0)scale(1);}
 }
 @-moz-keyframes slideIn {
-	0%      {opacity: .3;
+	0%      {opacity: 0.0;
 				-moz-transform: translate3d(5%,0,0)scale(.97);}
 	100%  {opacity: 1;
 				-moz-transform: translate3d(0,0,0)scale(1);}
 }
 @keyframes slideIn {
-	0%      {opacity: .3;
+	0%      {opacity: 0.0;
 				transform: translate3d(5%,0,0)scale(.97);}
 	100%  {opacity: 1;
 				transform: translate3d(0,0,0)scale(1);}
@@ -198,7 +200,7 @@ nav.abierto {
 
 /*Nav Shrinking Closed Effect*/
 nav.cerrado {
-	opacity: .3;
+	opacity: 0.0;
 	
 	-webkit-transform: translate3d(5%,0,0)scale(.97);
 	-webkit-animation: slideOut .3s ease-in-out;
@@ -212,19 +214,19 @@ nav.cerrado {
 @-webkit-keyframes slideOut {
 	0%      {opacity: 1;
 				-webkit-transform: translate3d(0,0,0)scale(1);}
-	100%  {opacity: .3;
+	100%  {opacity: 0.0;
 				-webkit-transform: translate3d(5%,0,0)scale(.97);}
 }
 @-moz-keyframes slideOut {
 	0%      {opacity: 1;
 				-moz-transform: translate3d(0,0,0)scale(1);}
-	100%  {opacity: .3;
+	100%  {opacity: 0.0;
 				-moz-transform: translate3d(5%,0,0)scale(.97);}
 }
 @keyframes slideOut {
 	0%      {opacity: 1;
 				transform: translate3d(0,0,0)scale(1);}
-	100%  {opacity: .3;
+	100%  {opacity: 0.0;
 				transform: translate3d(5%,0,0)scale(.97);}
 }
 

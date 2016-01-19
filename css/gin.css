@@ -13,19 +13,21 @@
 
 @font-face {
     font-family: 'Marcelle-Script';
-    src:url('fonts/Marcelle-Script.ttf.woff') format('woff'),
-        url('fonts/Marcelle-Script.ttf.svg#Marcelle-Script') format('svg'),
-        url('fonts/Marcelle-Script.ttf.eot'),
-        url('fonts/Marcelle-Script.ttf.eot?#iefix') format('embedded-opentype'); 
+    src:url('fonts/Marcelle-Script.woff') format('woff'),
+        url('fonts/Marcelle-Script.svg#Marcelle-Script') format('svg'),
+        url('fonts/Marcelle-Script.eot'),
+        url('fonts/Marcelle-Script.ttf') format('truetype'),
+        url('fonts/Marcelle-Script.eot?#iefix') format('embedded-opentype'); 
     font-weight: normal;
     font-style: normal;
 }
+
 
 /*TRUNKJS STYLES*/
 
 /*TRUNKJS END STYLES*/
 
-h1, h2{
+h1, h2, #qLpercentage{
 	font-family: 'traveling__typewriterregular';
 	color: #4A4A4A;
 }
@@ -52,41 +54,8 @@ h1, h2{
 	-moz-transition:all ease-in 600ms;
 }
 
-#navigation{
-    position: absolute;
-    top: 30px;
-    right: 40px;
-}
-#navigation ul{
-	float: right;
-	margin-right:30px;
-}
-#navigation ul li{
-	
-	display: inline-block;
-	list-style:none;
-	
-	float:left;
-}
-#navigation ul li a{
-	color: #4A4A4A;
-	letter-spacing: 2px;
-	padding: 0 13px;
-	float:left;
-	line-height: 60px;
-	margin:0 10px;
-	text-transform: uppercase;
-	transition:all ease 400ms;
-	-webkit-transition:all ease 400ms;
-	-moz-transition:all ease 400ms;
-}
-#navigation ul li a:hover{
-	background:#E0DCC9;
-	text-decoration: none;
-
-}
-#navigation ul li a.current{
-	background:#E0DCC9;
+.current{
+	background:#D6D0B5;
 }
 
 .separator{
@@ -111,11 +80,16 @@ h1, h2{
 	text-shadow: 0px 0px 20px #5D5C5A;
 }
 
-#nosotros{
+#textura{
 	background: url(../img/textura.jpg);
-	background-size: cover;
+	background-size: contain;
+}
+
+#nosotros{
+	/*background: url(../img/textura.jpg);
+	background-size: cover;*/
 	min-height: 400px;
-	    padding: 140px 15px 70px;
+	padding: 140px 15px 70px;
 	position: relative;
 	overflow: hidden;
 }
@@ -243,8 +217,8 @@ h1, h2{
 }
 #instagramfeed{
     position: relative;
-    background: url(../img/textura.jpg);
-    background-attachment: fixed;
+   /* background: url(../img/textura.jpg);
+    background-attachment: fixed;*/
     padding: 70px 15px 70px;
     overflow: hidden;
 }
@@ -257,7 +231,7 @@ h1, h2{
 #iguana{
     position: absolute;
     top: 1%;
-    left: -200px;
+    left: -240px;
     z-index: 0;
     transition:all ease 600ms;
 }
@@ -284,11 +258,92 @@ h1, h2{
 	margin: 10px auto;
 }
 #instacrap{
-	width: 765px;
+	width: auto;
+	max-width: 765px;
 	margin:40px auto;
 	position: relative;
 	z-index: 3;
 }
+
+.insta-logo{
+  max-height: 30px;
+}
+.pm-insta-box{
+  cursor: pointer;  
+  position: relative;  
+  overflow: hidden; 
+ 
+}
+
+.pm-insta-box .hovertags {  
+    background: rgba(119, 119, 119, 0.9);
+    position: absolute;
+    top: 2px;
+    left: 17px;
+    color: #fff;
+    z-index: 100;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    width: 87%;
+    height: 90%;
+    padding: 40px 15px;
+
+}  
+
+.pm-insta-box:hover .hovertags {  
+  opacity: 1;
+}
+
+.pm-insta-box .hovertext {
+  -webkit-transition: all 300ms ease-out;  
+  -moz-transition: all 300ms ease-out;  
+  -o-transition: all 300ms ease-out;  
+  -ms-transition: all 300ms ease-out;  
+  transition: all 300ms ease-out;
+  transform: translateY(40px);
+  -webkit-transform: translateY(40px);
+}
+
+.pm-insta-box .hashtags {
+  font-size: 14px;
+  opacity: 0;
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+  font-weight: lighter;
+  text-align: center;
+  height: 120px;
+  overflow: hidden;
+  line-height: 1.7;
+}
+.pm-insta-box .hashtags strong {
+  font-size: 20px;
+  display: block;
+  color: #ede8ce;
+}
+
+.pm-insta-box:hover .hashtags, .pm-insta-box:focus .hashtags {  
+  opacity: 1;
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+}
+.icon-color {
+  color: #fff;
+  font-size: 25px;
+}
+.icon-color i{
+  margin-right: 5px;
+}
+
+.thumbnail{
+    border: 0px solid white;
+    padding: 2px;
+    border-radius: 1px;
+}
+
 
 /*Galeria*/
 
@@ -299,7 +354,7 @@ h1, h2{
 	 background-position: 0 -120px;
 }
 #titulo-galeria{
-	margin-top: 40%;
+	margin-top: 45%;
 	margin-bottom: 30px;
 }
 
@@ -406,7 +461,7 @@ h1, h2{
 
 #menu h2{
 	font-family: 'Adobe Caslon Pro', serif;
-	font-size: 30px;
+	font-size: 28px;
 	display: inline-flex;
 }
 
@@ -423,17 +478,17 @@ h1, h2{
 
 #menu h2.twoline::after{
 	content:url(../img/thingie-right.png);
-	margin-left: -54px;
-    margin-top: 31px;
+	margin-left: -48px;
+    margin-top: 28px;
 }
 
 
 
 
-    
-
 #menu h2 span, #menu h3{
-	font-family: 'Marcelle-Script';
+	font-family:'Georgia';
+	font-style: italic;
+	/* 'Marcelle-Script',*/
 }
 
 #menu p{
@@ -648,7 +703,23 @@ footer .row{
 		#skullgin{
 		margin: -30px auto 0px;
 	}
-	 
+		.pm-insta-box .hovertags{
+		width: 91.2%;
+	    height: 93.5%;
+	    padding: 103px 15px;
+	}
+	#flowers{
+		    left: -190px;
+	}
+	#flowers2{
+		    right: -130px;
+	}
+	 .pm-insta-box:last-child{
+		display: none !important;
+	}
+	#intro{
+		background-size: cover;
+	}
 }
 
 @media (max-width: 840px){
@@ -656,7 +727,10 @@ footer .row{
 		width: 120px;
     	margin-top: 25px;
 	}
-
+	#galeria-wrapper{
+		background-position: 0px -50px;
+	}
+	
 	
 }
 
@@ -676,6 +750,7 @@ footer .row{
 		width: 80%;
 		margin: 0 auto;
 	}
+
 	#address-roma:before {
 	    content: "";
 	    position: absolute;
@@ -698,9 +773,20 @@ footer .row{
 	#isotopo{
 		width: 620px;
 	}
+	
+	#skullbull{
+	    right: -520px;
+    	top: 60px;
+	}
+
+	
+
 }
 
 @media (max-width: 640px){
+	.pm-insta-box .hovertags{
+		display: none;
+	}
 	#drink1{
 		display: none;
 	}
@@ -725,11 +811,53 @@ footer .row{
 	.item{
 		width: 100%;
 	}
+	#flowers{
+		    left: -340px;
+		    display: none;
+	}
+	#gin0clock h1{
+		line-height: 46px;
+    	    padding: 80px 20px;
+	}
+
+	#menu h2::after{
+		display: none;
+	}
+	#menu h2::before{
+		display: none;
+	}
+	#intro h1{
+		font-size: 50px;
+	}
+	#leafs{
+		display: none;
+	}
+
+/*	.pm-insta-box{
+		width: 470px;
+	    margin: 0 auto;
+	    display: block;
+	}*/
 }
 
-@media (max-width: 450px){
+@media (max-width: 460px){
 	#hoja1, #hoja2, #hoja3, #hoja4{
-		width: 250px;
+		width: 150px;
+	}
+		#intro h1 {
+	    font-size: 40px;
+	}
+	#nosotros-texto{
+		width: 100%;
+		margin-left: 0;
+	}
+	#nosotros-texto:before{
+		    top: -11px;
+    	right: -22px;
+	}
+	#nosotros-texto:after{
+		    top: -11px;
+    	left: -10px;
 	}
 }
 

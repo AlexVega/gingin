@@ -3,8 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <title>GINGIN {Kitchenbar}</title>
+<link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +38,16 @@
 <script src="js/plugins/debug.addIndicators.min.js"></script>
 <script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
 <script src="js/trunk.js"></script>
+<script src="js/queryloader2.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("body").queryLoader2({
+      barColor: "#fff",
+      backgroundColor: "#000",
+      percentage: true,
+    });
+});
+</script>
 <script>
 $( document ).ready(function() {
   /* activate jquery isotope */
@@ -57,18 +84,18 @@ $( document ).ready(function() {
     <ul id="navToggle" class="burger slide">    
       <li></li><li></li><li></li>
     </ul>
-    <img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar">
+    <a href="index.html"><img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar"></a>
   </header>
 
   <nav class="slide">
     <ul>
       <li><a href="index.html">Nosotros</a></li>
       <li class="separator">|</li>
-      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="galeria.html">Galería</a></li>
       <li class="separator">|</li>
-      <li><a href="menu.html">Menu</a></li>
+      <li><a href="menu.html">Menú</a></li>
       <li class="separator">|</li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a class="current" href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
   
@@ -111,26 +138,26 @@ $( document ).ready(function() {
   <footer>
     <div class="container">
       <div class="row">
-        <div id="social" class="col-sm-2">
-          <a href="#"><i class="fa fa-facebook-official"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-twitter-square"></i></a>
-        </div>
-        <div id="address-polanco" class="col-sm-4">
-          <h3>POLANCO</h3>
-          <p>Pedro Calderon de la Barca 72, Polanco <br>
-                Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
+      <div id="social" class="col-sm-2">
+        <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
+        <a href="https://www.instagram.com/gingin_mx/"><i class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/gingin_mx"><i class="fa fa-twitter-square"></i></a>
+      </div>
+      <div id="address-polanco" class="col-sm-4">
+        <h3>POLANCO</h3>
+        <p>Pedro Calderón de la Barca 72, Polanco <br>
+              Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
 
-        </div>
-        <div id="address-roma" class="col-sm-4">
-          <h3>ROMA</h3>
-          <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
-                Horario: Martes a Sábado 6pm - 2am</p>
+      </div>
+      <div id="address-roma" class="col-sm-4">
+        <h3>ROMA</h3>
+        <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
+              Horario:  Martes a Sábado 6pm - 2am</p>
 
-        </div>
-        <div id="indiana-group" class="col-sm-2">
-          <img src="img/indiana-logo.png" alt="">
-        </div>
+      </div>
+      <div id="indiana-group" class="col-sm-2">
+        <a href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
+      </div>
     </div>
       
     </div>

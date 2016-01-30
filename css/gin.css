@@ -34,6 +34,9 @@ h1, h2, #qLpercentage{
 .margin40{
 	margin: 40px 0;
 }
+.carousel-inner>.item>img{
+	width: 100%;
+}
 
 .left{
 	float: left;
@@ -46,6 +49,20 @@ h1, h2, #qLpercentage{
 	margin-left: 20px;
 }
 
+.center-link{
+	text-align: center;
+	color: #4A4A4A;
+	display: block;
+	font-family: 'traveling__typewriterregular';
+	font-size: 20px;
+}
+
+.carousel-control.right, .carousel-control.left {
+	transition:all ease-in 600ms;
+	-webkit-transition:all ease-in 600ms;
+	-moz-transition:all ease-in 600ms;
+	    z-index: 3;
+}
 #logo{
 	height: 50px;
 	margin: 5px 5px 5px 15px;
@@ -70,12 +87,24 @@ h1, h2, #qLpercentage{
 	background-size: contain;
 	min-height: 350px;
 }
-#intro h1{
+#keep{
+	position: absolute;
+    top: 36%;
+    /* left: 50%; */
+    width: 100%;
+    z-index: 3;
+}
+#carrusel{
+	position: relative;
+}
+
+
+
+#keep h1{
     text-align: center;
     color: #EDE8CE;
     font-family: serif;
     font-style: italic;
-    line-height: 350px;
     font-size: 70px;
 	text-shadow: 0px 0px 20px #5D5C5A;
 }
@@ -192,7 +221,6 @@ h1, h2, #qLpercentage{
 	font-family: 'traveling__typewriterregular';
 	font-size: 22px;
 	color: #757063;
-	opacity: 0.75;
 }
 #bebida1{
 	float: right;
@@ -440,7 +468,6 @@ h1, h2, #qLpercentage{
     position: absolute;
     top: -70px;
     left: 40px;
-    opacity: 0.75;
 }
 
 #flowers2{
@@ -448,14 +475,20 @@ h1, h2, #qLpercentage{
     top: -190px;
     width: 480px;
     right: 0;
-    opacity: 0.75;
 }
 
 #onion{
     position: absolute;
     bottom: -90px;
     right: -210px;
-    opacity: 0.75;
+}
+
+#map{
+	width: 100%;
+    height: 500px;
+    border-top: 9px solid #EDE8CE;
+    border-bottom:9px solid #EDE8CE;
+    box-shadow: 0 0 20px rgba(53, 34, 24, 0.45);
 }
 
 
@@ -463,6 +496,7 @@ h1, h2, #qLpercentage{
 	font-family: 'Adobe Caslon Pro', serif;
 	font-size: 28px;
 	display: inline-flex;
+	-moz-display: inline-flex;
 }
 
 #menu h2::after{
@@ -478,8 +512,7 @@ h1, h2, #qLpercentage{
 
 #menu h2.twoline::after{
 	content:url(../img/thingie-right.png);
-	margin-left: -48px;
-    margin-top: 28px;
+	position: absolute;
 }
 
 
@@ -521,14 +554,12 @@ h1, h2, #qLpercentage{
     right: -570px;
     top: 0;
     width: 1010px;
-    opacity: 0.75;
 }
 
 #crow{
 	position: absolute;
 	left: -160px;
     top: 180px;
-    opacity: 0.75;
 }
 
 
@@ -596,14 +627,17 @@ h1, h2, #qLpercentage{
 
 
 #image-bg{
-	background: #333 url(../img/contactobg.jpg);
-	min-height: 450px;
+	background: #E9E4DE url(../img/slider/hom4.jpg);
+	min-height: 500px;
+	background-size: cover;
+	background-position: center;
 }
 #formulario input, #formulario textarea{
 	width: 100%;
 	margin: 10px 0;
 	border:1px solid #aaa;
-	padding: 20px 10px;
+	padding: 10px;
+	height: auto;
 	font-family: 'traveling__typewriterregular';
 	background: #f1f1f1;
 	transition:all ease 600ms;
@@ -637,13 +671,24 @@ footer .row{
 }
 
 #social{
-	    font-size: 19px;
-    line-height: 109px;
+	    font-size: 22px;
+    line-height: 160px;
 }
 
 #social a{
 	margin:0 5px;
 	color: #EDE8CE;
+}
+.social a:hover{
+	color: #B3AF9A;
+}
+
+.foursquare{
+	color: #EDE8CE;
+	font-size: 22px;
+}
+.foursquare:hover{
+	color: #B3AF9A;
 }
 
 #address-polanco{
@@ -657,8 +702,8 @@ footer .row{
 #address-roma:before{
 	content: "";
 	position: absolute;
-    top: 30px;
-    left: 20px;
+    top: 70px;
+    left: 10px;
     width: 2px;
     height: 45px;
 	background-color: #EDE8CE;
@@ -667,6 +712,16 @@ footer .row{
 #ieg-group{
 	margin: 0 auto;
 }
+
+#qLoverlay::before {
+    position:absolute;
+    content:url(../img/white-logo.png);
+    left:50%;
+	margin-left: -100px;
+    right:0;
+    top:15%;
+}
+
 
   
 /* Estilos responsive */
@@ -832,6 +887,18 @@ footer .row{
 	#leafs{
 		display: none;
 	}
+	#keep{
+		top: 41%;
+	}
+	#keep h1{
+		font-size: 50px;
+	}
+	.carousel-inner>.item>img{
+		max-width: 170%;
+	}
+	#qLoverlay::before {
+	    top:5%;
+	}
 
 /*	.pm-insta-box{
 		width: 470px;
@@ -840,11 +907,20 @@ footer .row{
 	}*/
 }
 
+.resp-break{
+	display: none;
+}
+
 @media (max-width: 460px){
 	#hoja1, #hoja2, #hoja3, #hoja4{
 		width: 150px;
 	}
-		#intro h1 {
+	#intro{
+	    background-attachment: inherit;
+	        background-position: center center;
+	}
+
+	#intro h1 {
 	    font-size: 40px;
 	}
 	#nosotros-texto{
@@ -858,6 +934,12 @@ footer .row{
 	#nosotros-texto:after{
 		    top: -11px;
     	left: -10px;
+	}
+		.resp-break{
+		display: block;
+	}
+	#keep h1{
+		font-size: 30px;
 	}
 }
 

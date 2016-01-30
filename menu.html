@@ -27,6 +27,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/gin.css">
 <link rel="stylesheet" href="css/trunk.css">
+<link rel="stylesheet" href="css/animate.css">
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -38,6 +39,8 @@
 <script src="js/plugins/debug.addIndicators.min.js"></script>
 <script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
 <script src="js/trunk.js"></script>
+<script src="js/wow.min.js"></script>
+<!-- *******PRELOADER *******-->
 <script src="js/queryloader2.min.js"></script>
 <script>
   $(document).ready(function () {
@@ -46,76 +49,92 @@
       backgroundColor: "#000",
       percentage: true,
     });
+    wow = new WOW({
+      boxClass:     'wow',      // default
+      animateClass: 'animated', // default
+      offset:       0,          // default
+      mobile:       true,       // default
+      live:         true        // default
+    })
+    wow.init();
 });
 </script>
-<script>
-$( document ).ready(function() {
-  /* activate jquery isotope */
-  var $container = $('#galeria').isotope({
-    itemSelector : '.item',
-    isFitWidth: true
-  });
-
-  $(window).smartresize(function(){
-    $container.isotope({
-      columnWidth: '.col-sm-3'
-    });
-  });
-  
-  $container.isotope({ filter: '*' });
-
-    // filter items on button click
-  $('#filters').on( 'click', 'button', function() {
-    var filterValue = $(this).attr('data-filter');
-    $container.isotope({ filter: filterValue });
-  });
-});
 
 
-
-
-</script>
 </head>
 <body>
 <div class="page-wrapper">
+  <div id="header-wrapper">
+    <header class="slide">    
+      <ul id="navToggle" class="burger slide">    
+        <li></li><li></li><li></li>
+      </ul>
+      <a href="index.html"><img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar"></a>
+    </header>
 
-  <header class="slide">    
-    <ul id="navToggle" class="burger slide">    
-      <li></li><li></li><li></li>
-    </ul>
-    <a href="index.html"><img id="logo" src="img/logo.png" alt="GINGIN Kitchenbar"></a>
-  </header>
-
-  <nav class="slide">
-    <ul>
-      <li><a href="index.html">Nosotros</a></li>
-      <li class="separator">|</li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li class="separator">|</li>
-      <li><a class="current" href="menu.html">Menú</a></li>
-      <li class="separator">|</li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
-  
-  <div class="content slide">    
-
-  <div id="image-bg">
-    
-
+    <nav class="slide">
+      <ul>
+        <li><a href="index.html">Nosotros</a></li>
+        <li class="separator">|</li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li class="separator">|</li>
+        <li><a class="current" href="menu.html">Menú</a></li>
+        <li class="separator">|</li>
+        <li><a href="http://gin-gin.mx/eventos/">Eventos</a></li>
+        <li class="separator">|</li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
   </div>
+  <div class="content slide">    
+      <section >
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="6000">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="img/slider/menu1.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/slider/menu2.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/slider/menu3.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/slider/menu4.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="img/slider/menu5.jpg" alt="">
+          </div>
+           <div class="item">
+            <img src="img/slider/menu6.jpg" alt="">
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>   
+  </section>
+ 
   <div id="menuwrapper">
     
 
   <section id="menu" class="container">
-    <img id="flowers" src="img/flowers.png" alt="">
-    <img id="flowers2" src="img/flowers2.png" alt="">
+    <img  id="flowers" src="img/flowers.png" class="wow fadeInDown" data-wow-delay="100ms" alt="">
+    <img id="flowers2" src="img/flowers2.png" class="wow fadeInDown" data-wow-delay="300ms" alt="">
     <div class="row">
       <h2 class="left"> MONTADITOS </h2> <h3 class="left marleft20">"Selección de tres piezas"</h3>
       <div class="clearfix"></div>
       <div class="col-md-4">
         <h3>Jamón serrano con espárragos</h3>
-        <p>Crocante de jamón serrano y espárragos marinados con aceite de olivo extra virgen y mousse de cardamomo.</p>
+        <p>Crocante de jamón serrano y espárragos marinados con aceite de oliva extra virgen y mousse de cardamomo.</p>
       </div>
       <div class="col-md-4">
         <h3>Berenjena</h3>
@@ -123,20 +142,20 @@ $( document ).ready(function() {
       </div>
       <div class="col-md-4">
         <h3> Higos</h3>
-        <p>Higos caramelizados, queso cabra ceniza, miel trufada sobre pan cristal</p>
+        <p>Higos caramelizados, queso de cabra con ceniza y miel trufada sobre pan cristal.</p>
       </div>
     </div>
     <div id="clasicos" class="row">
-      <img id="skullbull" src="img/skullbull.png" alt="">
+      <img id="skullbull" class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="800ms" src="img/skullbull.png" alt="">
       <div class="col-md-12">
         <h2>LOS CLÁSICOS  DEL GIN GIN</h2>
       </div>
       
       <div class="col-md-6">
         <h3>Alcachofa al azafrán </h3>
-        <p>Alcachofa, pimiento rojo y portobello con aceite de olivo acompañado de aderezo de azafrán.</p>  
+        <p>Alcachofa, pimiento rojo y portobello con aceite de oliva acompañado de aderezo de azafrán.</p>  
         <h3>Caprese Mare  </h3>
-        <p>Ensalada de jitomate orgánico con queso mozarella de bufala, aceite de albahaca con gin Mare, glace balsámico y baya de enebro. </p>
+        <p>Ensalada de jitomate orgánico con queso mozarella de búfala, aceite de albahaca con gin Mare, glace balsámico y baya de enebro. </p>
         <h3>Aguachile Bombay  </h3>
         <p>Filete de res sellado con pimienta, marinado con aguachile Bombay y chilpetín montado con pepino persa, germinado de alfalfa y jengibre.  </p>
         <h3>Pulpo a la Hendricks </h3>
@@ -148,8 +167,8 @@ $( document ).ready(function() {
 
       </div>
       <div class="col-md-6">
-        <h3>Tacos de ribeye cointreau </h3>
-        <p>Cubos de ribeye flameado con cointreau, brotes de cilantro, germinados de cebolla y costra de parmesano acompañado con salsa negra de habanero y limón amarillo.</p>  
+        <h3>Tacos de rib eye cointreau </h3>
+        <p>Cubos de rib eye flameado con cointreau, brotes de cilantro, germinados de cebolla y costra de parmesano acompañado con salsa negra de habanero y limón amarillo.</p>  
         <h3>Ciabatta de rib eye   </h3>
         <p>Rib eye, costra de queso parmesano y provolone, portobello, cebolla morada, mezcla de lechugas y aderezo de chiles toreados.</p>  
         <h3>Mini hamburguesas </h3>
@@ -162,7 +181,7 @@ $( document ).ready(function() {
       </div>
     </div>
     <div id="especiales" class="row row-eq-height">
-      <img src="img/crow.png" id="crow" alt="">
+      <img src="img/crow.png" class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="800ms"  id="crow" alt="">
       <div class="col-md-6 marco marcofirst">
         <h2 class="twoline">LOS ESPECIALES <br> DE POLANCO</h2>
         <h3>Short rib glase  </h3>
@@ -173,7 +192,7 @@ $( document ).ready(function() {
         <h3>Baby beets salad</h3>
         <p>Arúgula, espinaca baby, higo rostizado, betabeles baby rostizados, mousse de queso de cabra, vinagreta de jitomate, aderezo de fresa.</p>
         <h3>Ceviche de huachinango  </h3>
-        <p>Huachinango fresco, limón eureka, pimientos, cebolla morada, jitomate, pasta de aji amarillo, aceite de oliva, brotes de cilantro, salmas para acompañar. </p>
+        <p>Huachinango fresco, limón eureka, pimientos, cebolla morada, jitomate, pasta de ají amarillo, aceite de oliva, brotes de cilantro, salmas para acompañar. </p>
         <h3>Salpicón de pato</h3>
         <p>Pato rostizado, jitomate, cebolla morada, jugo de cítricos, aguacate tatemado, chiles güeros en vinagre. </p>
 
@@ -198,7 +217,7 @@ $( document ).ready(function() {
       </div>
     </div>
     <div id="pizzas" class="row">
-      <img src="img/onion.png" id="onion" alt="">
+      <img src="img/onion.png" id="onion" class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="800ms" alt="">
       <div class="col-md-12">
         <h2> LAS PIZZAS</h2>
       </div>
@@ -213,8 +232,8 @@ $( document ).ready(function() {
 
       </div>
       <div class="col-md-6">
-        <h3>Arugula </h3>
-        <p>Pomodoro, arugula, queso de cabra, tomate cherry. </p>
+        <h3>Arúgula </h3>
+        <p>Pomodoro, arúgula, queso de cabra, tomate cherry. </p>
         <h3>Jeréz </h3>
         <p>Pomodoro, gorgonzola, jamón serrano, cocida pochada al jerez, glacede jeréz. </p>
         <h3>Mariscos </h3>
@@ -232,30 +251,32 @@ $( document ).ready(function() {
   <footer>
     <div class="container">
       <div class="row">
-      <div id="social" class="col-sm-2">
-        <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
-        <a href="https://www.instagram.com/gingin_mx/"><i class="fa fa-instagram"></i></a>
-        <a href="https://twitter.com/gingin_mx"><i class="fa fa-twitter-square"></i></a>
-      </div>
-      <div id="address-polanco" class="col-sm-4">
-        <h3>POLANCO</h3>
-        <p>Pedro Calderón de la Barca 72, Polanco <br>
-              Horario: Martes 4pm - 12am  Miércoles a Sábado 4pm - 2am</p>
-
-      </div>
-      <div id="address-roma" class="col-sm-4">
-        <h3>ROMA</h3>
-        <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
-              Horario:  Martes a Sábado 6pm - 2am</p>
-
-      </div>
-      <div id="indiana-group" class="col-sm-2">
-        <a href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
+        <div id="social" class="col-sm-2">
+          <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
+          <a href="https://www.instagram.com/gingin_mx/"><i class="fa fa-instagram"></i></a>
+          <a href="https://twitter.com/gingin_mx"><i class="fa fa-twitter-square"></i></a>
+        </div>
+        <div id="address-polanco" class="col-sm-4">
+          <h3>POLANCO</h3>
+           <a class="foursquare" href="https://es.foursquare.com/v/gin-gin/55a8927a498eed291761679e"><i class="fa fa-foursquare"></i></a>
+           <p>Pedro Calderón de la Barca 72, Polanco <br>
+            Horario: Lunes y Martes 6pm - 12am <br>
+               Miércoles a Sábado 6pm - 2am</p>
+        </div>
+          
+         
+        <div id="address-roma" class="col-sm-4">
+          <h3>ROMA</h3>
+          <a class="foursquare" href="https://es.foursquare.com/v/gin-gin/53bf50fe498ebba7eec03e04"><i class="fa fa-foursquare"></i></a>
+          <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
+                Horario:  Martes a Sábado <br class="resp-break"> 6pm - 2am</p>
+          
+        </div>
+        <div id="indiana-group" class="col-sm-2">
+          <a href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
+        </div>
       </div>
     </div>
-      
-    </div>
-    
   </footer>
   </div>
 

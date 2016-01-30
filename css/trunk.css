@@ -27,7 +27,16 @@ header h1 {
 	font-weight: bold;
 	padding-left: 20px;
 }
+#header-wrapper{
+	z-index: 9;
+	position: relative;
+}
 
+/*.item, .active{
+	margin: 0 !important;
+	padding:0 !important;
+}
+*/
 .burger {
 	position: absolute;
 	float: left;
@@ -68,7 +77,9 @@ nav li a {
 }
 nav li a:hover {background:#E0DCC9;text-decoration: none;color: #4A4A4A;}
 
-
+.carousel-inner .item{
+	margin: 0 !important;
+}
 
 
 /*  Removable CSS  */

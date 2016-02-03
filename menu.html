@@ -127,8 +127,22 @@
     
 
   <section id="menu" class="container">
-    <img  id="flowers" src="img/flowers.png" class="wow fadeInDown" data-wow-delay="100ms" alt="">
-    <img id="flowers2" src="img/flowers2.png" class="wow fadeInDown" data-wow-delay="300ms" alt="">
+    <img  id="flowers" src="img/flowers.png" alt="">
+    <img id="flowers2" src="img/flowers2.png" alt="">
+     <script>
+      var controller = new ScrollMagic.Controller();
+
+    var flowers = new ScrollMagic.Scene({triggerElement: "#menu"})
+
+              .setClassToggle("#flowers", "flowersanimate")
+              .addIndicators({name: "flowers"})
+              .addTo(controller);
+      var flowers2 = new ScrollMagic.Scene({triggerElement: "#menu"})
+
+              .setClassToggle("#flowers2", "flowers2animate")
+              .addIndicators({name: "leafy"})
+              .addTo(controller);
+    </script>
     <div class="row">
       <h2 class="left"> MONTADITOS </h2> <h3 class="left marleft20">"Selección de tres piezas"</h3>
       <div class="clearfix"></div>
@@ -147,6 +161,14 @@
     </div>
     <div id="clasicos" class="row">
       <img id="skullbull" class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="800ms" src="img/skullbull.png" alt="">
+      <script>
+      var skullbull = new ScrollMagic.Scene({triggerElement: "#clasicos"})
+
+                .setClassToggle("#skullbull", "skullbullanimate")
+                .addIndicators({name: "skullbull"})
+                .addTo(controller);
+       
+      </script>
       <div class="col-md-12">
         <h2>LOS CLÁSICOS  DEL GIN GIN</h2>
       </div>
@@ -182,6 +204,14 @@
     </div>
     <div id="especiales" class="row row-eq-height">
       <img src="img/crow.png" class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="800ms"  id="crow" alt="">
+       <script>
+      var crow = new ScrollMagic.Scene({triggerElement: "#especiales"})
+
+                .setClassToggle("#crow", "crowanimate")
+                .addIndicators({name: "crow"})
+                .addTo(controller);
+       
+      </script>
       <div class="col-md-6 marco marcofirst">
         <h2 class="twoline">LOS ESPECIALES <br> DE POLANCO</h2>
         <h3>Short rib glase  </h3>
@@ -218,6 +248,14 @@
     </div>
     <div id="pizzas" class="row">
       <img src="img/onion.png" id="onion" class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="800ms" alt="">
+            <script>
+      var onion = new ScrollMagic.Scene({triggerElement: "#pizzas"})
+
+                .setClassToggle("#onion", "onionanimate")
+                .addIndicators({name: "onion"})
+                .addTo(controller);
+       
+      </script>
       <div class="col-md-12">
         <h2> LAS PIZZAS</h2>
       </div>
@@ -242,10 +280,51 @@
       </div>
     </div>
   </section>
-  </div>
   <div id="gin0clock">
-    <h1>It's always gin o'clock</h1>
+    <h1>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="100ms">I</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="200ms">t</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="300ms">'</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="400ms">s</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="500ms">a</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="600ms">l</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="700ms">w</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="800ms">a</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="900ms">y</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1000ms">s</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1100ms">g</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1200ms">i</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1300ms">n</span>
+        <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1400ms">o</span>
+       <!--  I
+        t
+        '
+        s
+
+         a
+         l
+         w
+         a
+         y
+         s
+
+          g
+          i
+          n
+
+           o
+           '
+           c
+           l
+           o
+           c
+           k -->
+
+      </h1>
+    <!-- <h1>It's always gin o'clock</h1> -->
   </div>
+  </div>
+  
 
 
   <footer>

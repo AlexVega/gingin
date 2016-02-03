@@ -23,6 +23,7 @@
 }
 
 
+
 /*TRUNKJS STYLES*/
 
 /*TRUNKJS END STYLES*/
@@ -99,6 +100,21 @@ h1, h2, #qLpercentage{
 }
 
 
+.carrusel-nav{
+	    position: absolute;
+    top: 55%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -50px;
+    width: 50px;
+}
+.siguiente{
+    right: 10%;
+}
+
+.previo{
+	    left: 10%;
+}
 
 #keep h1{
     text-align: center;
@@ -285,6 +301,8 @@ h1, h2, #qLpercentage{
 	display: block;
 	margin: 10px auto;
 }
+
+
 #instacrap{
 	width: auto;
 	max-width: 765px;
@@ -466,21 +484,39 @@ h1, h2, #qLpercentage{
 
 #flowers{
     position: absolute;
-    top: -70px;
+    top: -170px;
     left: 40px;
+    transition:all ease 500ms;
 }
 
 #flowers2{
 	position: absolute;
-    top: -190px;
     width: 480px;
+    top: -230px;
     right: 0;
+    transition:all ease 700ms;
 }
+
+
+.flowersanimate{
+	 top: -70px !important;
+}
+
+.flowers2animate{
+	top: -190px !important;
+}
+
+
 
 #onion{
     position: absolute;
-    bottom: -90px;
+    bottom: -190px;
     right: -210px;
+    transition:all ease 700ms;
+}
+
+.onionanimate{
+	bottom: -90px !important;
 }
 
 #map{
@@ -551,15 +587,25 @@ h1, h2, #qLpercentage{
 
 #skullbull{
     position: absolute;
-    right: -570px;
+    right: -670px;
     top: 0;
     width: 1010px;
+    transition:all ease 500ms;
 }
+
+.skullbullanimate{
+	right: -570px !important;
+}
+
 
 #crow{
 	position: absolute;
-	left: -160px;
+	left: -240px;
     top: 180px;
+    transition:all ease 500ms;
+}
+.crowanimate{
+	left: -160px !important;
 }
 
 
@@ -567,8 +613,12 @@ h1, h2, #qLpercentage{
 
 
 #gin0clock{
-	background: url(../img/gin0clock.jpg);
+	background-image: url(../img/gin-o-clock.jpg);
 	background-size: cover;
+	padding: 70px 0;
+	margin: 70px 0;
+	  background-attachment: fixed;
+	  background-position: center; 
 	/*min-height: 350px;*/
 	
 }
@@ -775,6 +825,10 @@ footer .row{
 	#intro{
 		background-size: cover;
 	}
+	footer .container{
+		width: 100%;
+		padding:0;
+	}
 }
 
 @media (max-width: 840px){
@@ -785,7 +839,9 @@ footer .row{
 	#galeria-wrapper{
 		background-position: 0px -50px;
 	}
-	
+	#social{
+		font-size: 18px;
+	}
 	
 }
 
@@ -834,7 +890,9 @@ footer .row{
     	top: 60px;
 	}
 
-	
+	#social{
+		font-size: 22px;
+	}
 
 }
 

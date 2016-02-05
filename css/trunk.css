@@ -18,6 +18,7 @@ header {
 	background: #EDE8CE;
 	margin:0 auto;
 	left:5%;
+	z-index: 2;
 }
 header h1 {
 	color: #9aa6af;
@@ -59,6 +60,7 @@ nav {
 	position: absolute;
 	top: 30px;
     right: 6%;
+        z-index: 3;
 }
 nav li {
 	float: left;
@@ -168,7 +170,7 @@ nav {
 	top: 0;
 	margin: 0;
 	background-color: #EDE8CE;
-	
+	    z-index: -111;
 	/* starting point */
 	opacity: 0.0;
 	-webkit-transform: translate3d(5%,0,0)scale(.97);

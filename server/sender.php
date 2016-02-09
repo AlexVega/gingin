@@ -37,28 +37,17 @@
 
 	    }
 	    */
-<<<<<<< HEAD
-	    	function checkMail($mail){
-=======
-
 	//Mail checker
 	function checkMail($mail){
->>>>>>> b014190ff2b37fa97bd4549eb1268f4e3f52f2e8
 if(preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $mail)){
 					return true;
 				}else{
 					return false;
 				}
-<<<<<<< HEAD
+
 				
-}				
-	      		
+}	
 
-
-=======
-			
-		}	
->>>>>>> b014190ff2b37fa97bd4549eb1268f4e3f52f2e8
 				if(isset($_POST['nombre']) && !empty($_POST['nombre']) AND
 				   isset($_POST['mail']) && !empty($_POST['mail']) AND
 				   isset($_POST['mensaje']) && !empty($_POST['mensaje']) )
@@ -68,6 +57,8 @@ if(preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i"
 					$mail = mysqli_real_escape_string($db,$_POST['mail']);
 					$nombre = mysqli_real_escape_string($db,$_POST['nombre']);
 					$mensaje = mysqli_real_escape_string($db,$_POST['mensaje']);
+
+
 					
     if(checkMail($mail)){
 	$sql = "INSERT INTO users (`id`, `nombre`, `email`, `mensaje`) VALUES('','$nombre','$mail','$mensaje')";
@@ -76,7 +67,7 @@ if(preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i"
 	echo "<div id='respuestaAjax'><script>document.getElementById('formulario').reset(); </script> 
 							<script>sweetAlert('¡Gracias!','Datos guardados', 'success'); </script></div>";
 
-<<<<<<< HEAD
+
 
 
 	//*enviaMail($nombre,$mail,$mensaje);
@@ -99,44 +90,11 @@ else{
 	}	
 
 	else{
-=======
+
+echo "<div id='respuestaAjax'> 
+						 	<script>sweetAlert('Error','Datos incompletos','error'); </script></div>";
 
 				}
-
-
-				
-
-	if(checkMail($mail)){
-	$sql = "INSERT INTO users (`id`, `nombre`, `email`, `mensaje`) VALUES('','$nombre','$mail','$mensaje')";
-    $saveDB = mysqli_query($db, $sql);
-	if($saveDB){
-		echo "Datos guardados";
->>>>>>> b014190ff2b37fa97bd4549eb1268f4e3f52f2e8
-
-   echo "<div id='respuestaAjax'>
-		        <script>sweetAlert('Error','Campos vacios','error'); </script></div>";
-		 }
-
-<<<<<<< HEAD
-		 
-
-=======
-	//*enviaMail($nombre,$mail,$mensaje);
-    //header('Location: ../thankyou.html');
-	}else{
-	echo "Error no se guardo en base de datos";
-	echo   mysqli_error($db);
-		}
-								
-	}else{
-
-    echo "Mail invalido";
-		  }
-  
->>>>>>> b014190ff2b37fa97bd4549eb1268f4e3f52f2e8
-
-
-
 
 
  ?>

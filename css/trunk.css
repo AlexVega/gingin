@@ -163,6 +163,7 @@ nav li a.active {
 
 /* NAVIGATION ANNIMATION */
 nav {
+	display: none;
 	width: 240px;
 	height: 100%;
 	position: fixed;
@@ -180,6 +181,7 @@ nav {
 
 /*Nav Expanding Open Effect*/
 nav.abierto {
+	display: block;
 	opacity: 1;
 	z-index: 10;
 
@@ -214,7 +216,7 @@ nav.abierto {
 /*Nav Shrinking Closed Effect*/
 nav.cerrado {
 	opacity: 0.0;
-	
+	z-index: -111;
 	-webkit-transform: translate3d(5%,0,0)scale(.97);
 	-webkit-animation: slideOut .3s ease-in-out;
 	

@@ -1,35 +1,51 @@
 <?php 	
 	require 'db.php';
 	require 'phpmailer/PHPMailerAutoload.php';
-	require 'phpmailer/class.pop3.php';
-	/*function enviaMail($mail,$nombre,$mensaje){
+	require 'phpmailer/class.phpmailer.php';
+	//require 'phpmailer/class.pop3.php';
+
+	function MailGin($correo,$nom,$msj){
 		//Envia Mail
 		$mail = new PHPMailer;
-		$mail->SMTPDebug = 3;
+		$mail->Host = gethostbyname('smtp.gmail.com');
+		//$mail->SMTPDebug = 3;
 		$mail->isSMTP();
-		$mail->Host = '';
+		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = true;
-		$mail->Username = 'marketing@quality.com.mx';
-		$mail->Password = 'Accion559';
-		$mail->Port = 587;
-		$mail->setFrom('marketing@quality.com.mx','Contacto Quality');  
-		$mail->addAddress($mail,$nombre,$mensaje);
+		$mail->SMTPSecure = "tls";
+		$mail->Username = 'erik@concepthaus.mx';
+		$mail->Password = 'programacion2016';
+		$mail->Port =  587;
+		$mail->setFrom('erik@concepthaus.mx','Erik Rodriguez');  
+		$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
+		$mail->addAddress('contacto@iegroup.mx','Iegroup');
+		$mail->addAddress('erik@concepthaus.mx','Developer');
 		$mail->isHTML(true);
 		$mail->CharSet = 'UTF-8';
-		$mail->Subject = 'Gracias por tu interés'; 
-		$mail->Body = "Alguien se ha registrado en el landing de Autoefectivo con los siguientes datos
-                          Nombre: ".$name."
-                          Email: ".$mail."
-                          Mensaje: ".$mensaje;
-		
-		if(!$mail->send()) {
-			echo 'Message could not be sent.';
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		} else{
-			echo 'mensaje enviado';
-		}
-	    }
-	    */
+		$mail->Subject = 'Nuevo usuario en GinGin'; 
+		$mail->Body = '<html><h1>Alguien se a puesto en contacto con GinGin<h1><br><br><br>
+
+		Nombre :'.$nom.' <br><br>
+		E-mail :'.$correo.' <br><br>
+		Mensaje: '.$msj;
+
+		$mail->send();
+
+/*   if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message has been sent' ;
+        }
+        */
+
+    }
+                         
+
+
+
+
+
 	//Mail checker
 	function checkMail($mail){
 if(preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $mail)){
@@ -52,11 +68,12 @@ if(preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i"
 	$sql = "INSERT INTO users (`id`, `nombre`, `email`, `mensaje`) VALUES('','$nombre','$mail','$mensaje')";
     $saveDB = mysqli_query($db, $sql);
 	if($saveDB){
+		MailGin($mail,$nombre,$mensaje);
 	echo "<div id='respuestaAjax'><script>document.getElementById('formulario').reset(); </script> 
 							<script>
 							swal({   title: 'GRACIAS',   
 							text: 'En breve nos comunicaremos contigo',   
-							imageUrl: '../img/succes.png',  
+							imageUrl: './img/succes.png',  
 							confirmButtonColor: '#000'
 							 });
 						 	 </script></div>";
@@ -68,7 +85,7 @@ if(preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i"
 						 	<script>
 							swal({   title: 'ERROR',   
 							text: 'Error en base de datos',   
-							imageUrl: '../img/error.png',  
+							imageUrl: './img/error.png',  
 							confirmButtonColor: '#000'
 							 });
 						 	 </script></div>"; 
@@ -80,7 +97,7 @@ else{
 						 	<script>
 							swal({   title: 'ERROR',   
 							text: 'Mail invalido',   
-							imageUrl: '../img/error.png',  
+							imageUrl: './img/error.png',  
 							confirmButtonColor: '#000'
 							 });
 						 	 </script></div>";
@@ -92,7 +109,7 @@ echo "<div id='respuestaAjax'>
 						 	<script>
 							swal({   title: 'ERROR',   
 							text: 'Datos incompletos',   
-							imageUrl: '../img/error.png',  
+							imageUrl: './img/error.png',  
 							confirmButtonColor: '#000'
 							 });
 						 	 </script></div>";

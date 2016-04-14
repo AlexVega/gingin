@@ -309,11 +309,12 @@ initialize();
                    type:'POST',
                    url:'server/sender.php',
                    data: dataString,
-                  // beforeSend: function(){
-                    //   swal({   title: "Procesando",   
-                      //          text: "Estamos validando tus datos...", 
-                        //        showConfirmButton: false });
-                   //},
+                  beforeSend: function(){
+                       swal({   title: "Procesando",
+                                imageUrl: './img/succes.png',   
+                                text: "Estamos validando tus datos...", 
+                                showConfirmButton: false });
+                   },
                    success:function(data){
                        $('#respuestaAjax').replaceWith(data);
                    },

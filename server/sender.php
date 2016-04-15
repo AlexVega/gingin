@@ -24,8 +24,8 @@
 		$mail->Password = 'programacion2016';
 		$mail->Port =  587;
 		$mail->setFrom('erik@concepthaus.mx','Erik Rodriguez');  
-		//$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
-		//$mail->addAddress('contacto@iegroup.mx','Iegroup');
+		$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
+		$mail->addAddress('contacto@iegroup.mx','Iegroup');
 		$mail->addAddress('erik@concepthaus.mx','Developer');
 		$mail->isHTML(true);
 		$mail->CharSet = 'UTF-8';

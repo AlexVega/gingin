@@ -5,6 +5,13 @@
 	//require 'phpmailer/class.pop3.php';
 
 	function MailGin($correo,$nom,$msj){
+
+		//Template Admin
+		$templateAdmin = file_get_contents('MailAdminForm.html');
+		$templateAdmin = str_replace('%nombre%', $nom,$templateAdmin);
+		$templateAdmin = str_replace('%email%', $correo,$templateAdmin);
+		$templateAdmin = str_replace('%mensaje%', $msj,$templateAdmin);
+		$templateAdmin = str_replace('\r\n','<br>', $templateAdmin);
 		//Envia Mail
 		$mail = new PHPMailer;
 		$mail->Host = gethostbyname('smtp.gmail.com');
@@ -17,18 +24,13 @@
 		$mail->Password = 'programacion2016';
 		$mail->Port =  587;
 		$mail->setFrom('erik@concepthaus.mx','Erik Rodriguez');  
-		$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
-		$mail->addAddress('contacto@iegroup.mx','Iegroup');
+		//$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
+		//$mail->addAddress('contacto@iegroup.mx','Iegroup');
 		$mail->addAddress('erik@concepthaus.mx','Developer');
 		$mail->isHTML(true);
 		$mail->CharSet = 'UTF-8';
-		$mail->Subject = 'Nuevo usuario en GinGin'; 
-		$mail->Body = '<html><h1>Alguien se a puesto en contacto con GinGin<h1><br><br><br>
-
-		Nombre :'.$nom.' <br><br>
-		E-mail :'.$correo.' <br><br>
-		Mensaje: '.$msj;
-
+		$mail->Subject = 'Has recibido un nuevo mensaje desde gin-gin.mx'; 
+		$mail->Body = $templateAdmin;
 		$mail->send();
 
 /*   if(!$mail->send()) {

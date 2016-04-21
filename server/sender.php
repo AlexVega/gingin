@@ -24,8 +24,8 @@
 		$mail->Password = 'programacion2016';
 		$mail->Port =  587;
 		$mail->setFrom('erik@concepthaus.mx','Erik Rodriguez');  
-		$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
-		$mail->addAddress('contacto@iegroup.mx','Iegroup');
+		//$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
+		//$mail->addAddress('contacto@iegroup.mx','Iegroup');
 		$mail->addAddress('erik@concepthaus.mx','Developer');
 		$mail->isHTML(true);
 		$mail->CharSet = 'UTF-8';
@@ -40,6 +40,31 @@
     echo 'Message has been sent' ;
         }
         */
+
+        //Template Usuario
+		$templateUser = file_get_contents('MailUserForm.html');
+		$templateUser = str_replace('%nombre%', $nom,$templateUser);
+		$templateUser = str_replace('\r\n','<br>', $templateUser);
+		//Envia Mail
+		$mail = new PHPMailer;
+		$mail->Host = gethostbyname('smtp.gmail.com');
+		//$mail->SMTPDebug = 3;
+		$mail->isSMTP();
+		$mail->Host = 'smtp.gmail.com';
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = "tls";
+		$mail->Username = 'erik@concepthaus.mx';
+		$mail->Password = 'programacion2016';
+		$mail->Port =  587;
+		$mail->setFrom('erik@concepthaus.mx','Gin Gin');  
+		//$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
+		//$mail->addAddress('contacto@iegroup.mx','Iegroup');
+		$mail->addAddress($correo);
+		$mail->isHTML(true);
+		$mail->CharSet = 'UTF-8';
+		$mail->Subject = 'Gracias por contactarnos a gin-gin.mx'; 
+		$mail->Body = $templateUser;
+		$mail->send();
 
     }
                          

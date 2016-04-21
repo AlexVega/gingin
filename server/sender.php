@@ -23,10 +23,10 @@
 		$mail->Username = 'erik@concepthaus.mx';
 		$mail->Password = 'programacion2016';
 		$mail->Port =  587;
-		$mail->setFrom('erik@concepthaus.mx','Erik Rodriguez');  
-		//$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
-		//$mail->addAddress('contacto@iegroup.mx','Iegroup');
-		$mail->addAddress('erik@concepthaus.mx','Developer');
+		$mail->setFrom('erik@concepthaus.mx','Gin Gin');  
+		$mail->addAddress('jcisneros@iegroup.mx ','Cisneros');
+		$mail->addAddress('contacto@iegroup.mx','Iegroup');
+		//$mail->addAddress('erik@concepthaus.mx','Developer');
 		$mail->isHTML(true);
 		$mail->CharSet = 'UTF-8';
 		$mail->Subject = 'Has recibido un nuevo mensaje desde gin-gin.mx'; 

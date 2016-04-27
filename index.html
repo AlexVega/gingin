@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<title>GINGIN {Kitchenbar}</title>
+<meta http-equiv="Cache-control" content="public">
+<title>GINGIN {Kitchenbar} | La mejor propuesta de bares en la Roma y Polanco </title>
+<meta name="description" content="Con una carta que contiene los cocteles con ginebra más irresistibles,GINGIN se ha convertido en uno de los bares más aclamados en la Roma y Polanco.">
 <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
@@ -33,35 +35,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/ScrollMagic.min.js"></script>
-<script src="js/plugins/debug.addIndicators.min.js"></script>
-<script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
-<script src="js/trunk.js"></script>
-<script src="js/app.js"></script>
-<script src="js/services.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/wow.min.js"></script>
-<!-- *******PRELOADER *******-->
-<script src="js/queryloader2.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $("body").queryLoader2({
-      barColor: "#fff",
-      backgroundColor: "#000"
-    });
-    wow = new WOW({
-      boxClass:     'wow',      
-      animateClass: 'animated', 
-      offset:       0,          
-      mobile:       true,       
-      live:         true        
-    })
-    wow.init();
-});
-</script>
+
 
 </head>
 <body id="textura">
@@ -105,10 +79,10 @@
  
   <section id="carrusel" class="resp-fix">
     <div id="keep">
-      <h1>
+      <p>
         <span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="100ms">#</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="200ms">K</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="300ms">e</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="400ms">e</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="500ms">p</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="600ms">T</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="700ms">h</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="800ms">e</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="900ms">S</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1000ms">e</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1100ms">c</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1200ms">r</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1300ms">e</span><span class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1400ms">t</span>
 
-      </h1>
+      </p>
     </div>
     <div id="carousel-gin" class="carousel slide" data-ride="carousel" data-interval="3000">
 
@@ -155,12 +129,11 @@
       <div class="row">
       <div id="triggerhoja"></div>
         <div id="nosotros-texto" class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-          <p>La mejor mixología de ginebras de México   </p>
+          <h1>La mejor propuesta de bares en la Roma y Polanco </h1>
+          <p>El nuevo concepto de coctelería con ginebra en Polanco y la Roma ha hecho del GinGin uno de los lugares más aclamados gracias a su diseño interior, ambiente, música pero, sobre todo, por la calidad de alimentos y bebidas.</p>
         </div>
       </div>
-      <script>
-        var controller = new ScrollMagic.Controller();
-      </script>
+     
       <div id="bebidas" class="row">
         <div class="col-sm-6">
           <p id="bebida1" class="bebidas">#StickyGin <img id="drink1" src="img/drink.png" alt=""></p>
@@ -187,7 +160,125 @@
       
       
       <script>
-        var hoja1 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
+      
+      </script>
+  </section>
+  <section id="video" class="container-fluid">
+    <script>
+   
+
+    </script>
+    <div class="row">
+      
+        <video id="vid" controls preload="none" poster="video/secret.jpg"> 
+          <source src="video/secret.mp4" type='video/mp4' />
+          <!-- <source src="video/secret.webm" type='video/webm' /> -->
+        </video> 
+      
+    </div>
+    <div id="pausavideo"></div>
+    <script>
+
+      </script>
+  </section>
+  <section id="instagramfeed" class="container-fluid">
+    
+    <img id="iguana" src="img/iguana.png" alt="">
+    <img id="leafs" src="img/leafs.png" alt="">
+    <div id="instafeed"></div>
+    <div id="triggeriguana" class="row">
+      <div class="col-md-6 col-md-offset-3">
+      
+        <h3>Share with us #GinNights</h3>
+        
+      </div>
+      <div ng-app="ginstagram" ng-controller="InstaCtrl" id="instacrap">
+         <div ng-repeat="p in pics | limitTo:9"  class="col-md-4 col-sm-6 col-xs-6 pm-insta-box">
+            <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.standard_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}" alt="{{p.caption.text}}"></a>
+            <!-- <span class="glyphicon glyphicon-heart icon-color"> {{p.likes.count}}</span> <span class="glyphicon glyphicon-comment"> {{p.comments.count}}</span>  -->
+            <a class="hovertags" href="{{p.link}}" target="_blank">
+              <div class="hashtags hovertext">
+              <span class="icon-color"><i class="glyphicon glyphicon-heart"></i>{{p.likes.count}}</span>
+              <strong>@{{p.caption.from.username}}</strong>
+                {{p.caption.text}}
+              </div>
+            </a>
+          </div>
+      </div>
+      
+    </div>
+    <!-- <div class="row">
+      <img id="camera" src="img/camera.png" alt="">
+    </div> -->
+   <script>
+     
+      </script>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div id="social" class="col-sm-2">
+          <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
+          <a href="https://www.instagram.com/gingin_mx/"><i class="fa fa-instagram"></i></a>
+          <a href="https://twitter.com/gingin_mx"><i class="fa fa-twitter-square"></i></a>
+        </div>
+        <div id="address-polanco" class="col-sm-4">
+          <h2>POLANCO</h2>
+           <a class="foursquare" href="https://es.foursquare.com/v/gin-gin/55a8927a498eed291761679e"><i class="fa fa-foursquare"></i></a>
+           <p>Pedro Calderón de la Barca 72, Polanco <br>
+            Horario: Lunes y Martes 6pm - 12am <br>
+               Miércoles a Sábado 6pm - 2am</p>
+        </div>
+          
+         
+        <div id="address-roma" class="col-sm-4">
+          <h2>ROMA</h2>
+          <a class="foursquare" href="https://es.foursquare.com/v/gin-gin/53bf50fe498ebba7eec03e04"><i class="fa fa-foursquare"></i></a>
+          <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
+                Horario:  Martes a Sábado <br class="resp-break"> 6pm - 2am</p>
+          
+        </div>
+        <div id="indiana-group" class="col-sm-2">
+          <a class="hidden-sm" href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
+          <a class="visible-sm" href="http://iegroup.mx/"><img class="img-responsive img-center" src="img/indiana-logo-simple.png" alt="ieg-group"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ScrollMagic.min.js"></script>
+<script src="js/plugins/debug.addIndicators.min.js"></script>
+<script src="https://rawgithub.com/desandro/isotope/v1.5.25/jquery.isotope.js"></script>
+<script src="js/trunk.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/wow.min.js"></script>
+<!-- *******PRELOADER *******-->
+<script src="js/queryloader2.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("body").queryLoader2({
+      barColor: "#fff",
+      backgroundColor: "#000"
+    });
+    wow = new WOW({
+      boxClass:     'wow',      
+      animateClass: 'animated', 
+      offset:       0,          
+      mobile:       true,       
+      live:         true        
+    })
+    wow.init();
+});
+</script>
+ <script>
+        var controller = new ScrollMagic.Controller();
+          var hoja1 = new ScrollMagic.Scene({triggerElement: "#triggerhoja", duration: 400})
 
                 .setClassToggle("#hoja1", "hoja1animate")
                 //.addIndicators({name: "hoja1"})
@@ -212,73 +303,7 @@
                 .setClassToggle("#skullgin", "scaleup")
                 //.addIndicators({name: "skull"})
                 .addTo(controller);
-      </script>
-  </section>
-  <section id="video" class="container-fluid">
-    <script>
-   
-      var videoplay = new ScrollMagic.Scene({ triggerElement: "#video"})
-                .on('start', function () {
-                    $('#vid')[0].play(); 
-                })
-                .on('leave', function () {
-                    $('#vid')[0].pause(); 
-                })
-                //.addIndicators({name: "videoplay"})
-                .addTo(controller);   
-    </script>
-    <div class="row">
-      
-        <video id="vid" controls preload="none" poster="video/secret.jpg"> 
-          <source src="video/secret.mp4" type='video/mp4' />
-          <!-- <source src="video/secret.webm" type='video/webm' /> -->
-        </video> 
-      
-    </div>
-    <div id="pausavideo"></div>
-    <script>
-      var videopausa = new ScrollMagic.Scene({ triggerElement: "#pausavideo"})
-                .on('start', function () {
-                    $('#vid')[0].pause(); 
-                })
-                .on('leave', function () {
-                    $('#vid')[0].play(); 
-                })
-                //.addIndicators({name: "videopausa"})
-                .addTo(controller);
-      </script>
-  </section>
-  <section id="instagramfeed" class="container-fluid">
-    
-    <img id="iguana" src="img/iguana.png" alt="">
-    <img id="leafs" src="img/leafs.png" alt="">
-    <div id="instafeed"></div>
-    <div id="triggeriguana" class="row">
-      <div class="col-md-6 col-md-offset-3">
-      
-        <h2>Share with us #GinNights</h2>
-        
-      </div>
-      <div ng-app="ginstagram" ng-controller="InstaCtrl" id="instacrap">
-         <div ng-repeat="p in pics | limitTo:9"  class="col-md-4 col-sm-6 col-xs-6 pm-insta-box">
-            <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.standard_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}" alt="{{p.caption.text}}"></a>
-            <!-- <span class="glyphicon glyphicon-heart icon-color"> {{p.likes.count}}</span> <span class="glyphicon glyphicon-comment"> {{p.comments.count}}</span>  -->
-            <a class="hovertags" href="{{p.link}}" target="_blank">
-              <div class="hashtags hovertext">
-              <span class="icon-color"><i class="glyphicon glyphicon-heart"></i>{{p.likes.count}}</span>
-              <strong>@{{p.caption.from.username}}</strong>
-                {{p.caption.text}}
-              </div>
-            </a>
-          </div>
-      </div>
-      
-    </div>
-    <!-- <div class="row">
-      <img id="camera" src="img/camera.png" alt="">
-    </div> -->
-   <script>
-      var iguana = new ScrollMagic.Scene({triggerElement: "#triggeriguana"})
+        var iguana = new ScrollMagic.Scene({triggerElement: "#triggeriguana"})
 
                 .setClassToggle("#iguana", "iguanaanimate")
                 //.addIndicators({name: "iguana"})
@@ -288,41 +313,25 @@
                 .setClassToggle("#leafs", "leafsanimate")
                 //.addIndicators({name: "leafy"})
                 .addTo(controller);
+       var videoplay = new ScrollMagic.Scene({ triggerElement: "#video"})
+                .on('start', function () {
+                    $('#vid')[0].play(); 
+                })
+                .on('leave', function () {
+                    $('#vid')[0].pause(); 
+                })
+                //.addIndicators({name: "videoplay"})
+                .addTo(controller);   
+       var videopausa = new ScrollMagic.Scene({ triggerElement: "#pausavideo"})
+                .on('start', function () {
+                    $('#vid')[0].pause(); 
+                })
+                .on('leave', function () {
+                    $('#vid')[0].play(); 
+                })
+                //.addIndicators({name: "videopausa"})
+                .addTo(controller);
       </script>
-  </section>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div id="social" class="col-sm-2">
-          <a href="https://www.facebook.com/ginginmx"><i class="fa fa-facebook-official"></i></a>
-          <a href="https://www.instagram.com/gingin_mx/"><i class="fa fa-instagram"></i></a>
-          <a href="https://twitter.com/gingin_mx"><i class="fa fa-twitter-square"></i></a>
-        </div>
-        <div id="address-polanco" class="col-sm-4">
-          <h3>POLANCO</h3>
-           <a class="foursquare" href="https://es.foursquare.com/v/gin-gin/55a8927a498eed291761679e"><i class="fa fa-foursquare"></i></a>
-           <p>Pedro Calderón de la Barca 72, Polanco <br>
-            Horario: Lunes y Martes 6pm - 12am <br>
-               Miércoles a Sábado 6pm - 2am</p>
-        </div>
-          
-         
-        <div id="address-roma" class="col-sm-4">
-          <h3>ROMA</h3>
-          <a class="foursquare" href="https://es.foursquare.com/v/gin-gin/53bf50fe498ebba7eec03e04"><i class="fa fa-foursquare"></i></a>
-          <p>Oaxaca 87, Cuauhtémoc, Roma Norte <br>
-                Horario:  Martes a Sábado <br class="resp-break"> 6pm - 2am</p>
-          
-        </div>
-        <div id="indiana-group" class="col-sm-2">
-          <a class="hidden-sm" href="http://iegroup.mx/"><img id="ieg-group" src="img/indiana-logo.png" alt="ieg-group"></a>
-          <a class="visible-sm" href="http://iegroup.mx/"><img class="img-responsive img-center" src="img/indiana-logo-simple.png" alt="ieg-group"></a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  </div>
-</div>
 </body>
 </html>
 
